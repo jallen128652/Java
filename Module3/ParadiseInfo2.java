@@ -22,7 +22,7 @@ public class ParadiseInfo2 {
 //    method that calculates a value to be returned to main
     public static double computeDiscountInfo(double price, double discountRate) {
         double savings; // local variable for the return
-        savings = price * discountRate / 100;
+        savings = price * discountRate / 100; // passed in variables used in an expression in order
         return savings; // returns this value to the original variable and ends the method
     }
 }
