@@ -13,16 +13,15 @@ public class ParadiseInfo2 {
         System.out.print("Enter discount rate as a whole number: ");
         discount = keyboard.nextDouble();
 //      pass 2 variable to method and call method
-        savings = computeDiscountInfo(price, discount);
-
+        savings = computeDiscountInfo(price, discount); // note the order of the variables being passed
         System.out.println("Special this week on any service over " + price);
         System.out.println("Discount of " + discount + " percent");
         System.out.println("That's a savings of at least $" + savings); // variable after return
     }
-//    method that calculates a value to be returned to main
+//    method that calculates a value to be returned to main, note the order of the variables in the function
     public static double computeDiscountInfo(double price, double discountRate) {
         double savings; // local variable for the return
-        savings = price * discountRate / 100; // passed in variables used in an expression in order
+        savings = price * discountRate / 100; // passed in variables used in an expression
         return savings; // returns this value to the original variable and ends the method
     }
 }
