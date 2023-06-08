@@ -5,7 +5,14 @@ public class SpaService {
 //    private data fields or private variables
     private String serviceDescription;
     private double price;
-//    instance methods
+//    explicit default constructor
+    public SpaService()
+    {
+        serviceDescription = "XXX";
+        price = 0;
+    }
+
+//    instance method declarations
     public void setServiceDescription(String service)
     {
         serviceDescription = service;
