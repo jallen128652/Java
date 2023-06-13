@@ -42,5 +42,15 @@ public class Main {
         signOrder.printReceipt(strMessage, quantity);
         signOrder.printReceipt(strMessage, quantity, imageQuantity);
 
+//        this commented out section is if you wanted to call only one of the overloaded methods based on user selection
+//        it did not call for that in the lesson, just wanted to see if it worked.
+
+//        if (quantity == 1){
+//            signOrder.printReceipt(strMessage);
+//        } else if (quantity > 1){
+//            signOrder.printReceipt(strMessage, quantity);
+//        } else if (imageQuantity > 1)
+//        signOrder.printReceipt(strMessage, quantity, imageQuantity);
+
     }
 }
