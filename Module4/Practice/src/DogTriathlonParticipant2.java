@@ -50,14 +50,14 @@ public class DogTriathlonParticipant2 {
 //    method used to display values when called
         public void display()
         {
+            if(!doScoresAgree)
+                System.out.println("\nNotice! Number of events for " +
+                        name + " does not agree with scores reported.");
             System.out.println(name + " participated in " +
                     NUM_EVENTS + " events and has an average score of " + avg);
             System.out.println(" " + name + " has a total score of " +
                     total + " bringing the total cumulative score to " +
                     totalCumulativeScore);
-            if(!doScoresAgree)
-                System.out.println("\nNotice! Number of events for " +
-                         name + " does not agree with scores reported.\n");
         }
 
 

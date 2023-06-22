@@ -9,7 +9,7 @@ public class TestDog2 {
                 new DogTriathlonParticipant2("Rush", 2, 78, 72, 80);
         dog2.display();
         DogTriathlonParticipant2 dog3 =
-                new DogTriathlonParticipant2("Ginger", 4, 90, 86, 72);
+                new DogTriathlonParticipant2("Ginger", 2, 90, 72, 12);
         dog3.display();
     }
 }
