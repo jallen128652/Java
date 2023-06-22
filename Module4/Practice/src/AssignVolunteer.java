@@ -13,15 +13,20 @@ public class AssignVolunteer {
         System.out.println("What type of donation is this?");
         System.out.print("Enter " + CLOTHING_CODE + " for clothing, " + OTHER_CODE + " for anything else: ");
         donationType = input.nextInt();
+// nested if and else
+        if (donationType == CLOTHING_CODE || donationType == OTHER_CODE) {
+            if (donationType == CLOTHING_CODE) {
+                volunteer = CLOTHING_PRICER;
+                message = "a clothing donation.";
+            } else {
+                volunteer = OTHER_PRICER;
+                message = "a non-clothing item.";
+            }
+        } else {
+                volunteer = "invalid";
+                message = "an invalid input.";
+        }
 
-        if(donationType == CLOTHING_CODE) {
-            volunteer = CLOTHING_PRICER;
-            message = "a clothing donation.";
-        }
-        else {
-            volunteer = OTHER_PRICER;
-            message = "a non-clothing item.";
-        }
 
         System.out.println("You entered " + donationType);
         System.out.println("The volunteer who will price this item is " + volunteer);
