@@ -13,7 +13,7 @@ public class AssignVolunteer {
         System.out.println("What type of donation is this?");
         System.out.print("Enter " + CLOTHING_CODE + " for clothing, " + OTHER_CODE + " for anything else: ");
         donationType = input.nextInt();
-// nested if and else
+// nested if and else using OR operator
         if (donationType == CLOTHING_CODE || donationType == OTHER_CODE) {
             if (donationType == CLOTHING_CODE) {
                 volunteer = CLOTHING_PRICER;
