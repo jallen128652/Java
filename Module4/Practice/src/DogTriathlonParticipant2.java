@@ -59,6 +59,4 @@ public class DogTriathlonParticipant2 {
                     total + " bringing the total cumulative score to " +
                     totalCumulativeScore);
         }
-
-
 }
