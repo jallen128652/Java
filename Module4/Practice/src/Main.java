@@ -1,5 +1,5 @@
 import java.util.Scanner;
-import java.util.Random;
+
 
 public class Main {
     //This is the global section. All variables and constants declared here can be seen and used by the entire program.
@@ -13,19 +13,57 @@ public class Main {
 
         //Declarations
         Game player = new Game();  //This is an object of your Game class, DO NOT create more objects of the Game class.
-
+//        variables
+        String strWeapon;
+        String compWeapon;
+        String playerName;
+//        scanner
+        Scanner name = new Scanner(System.in);
+//        using player object input name and set name
+        System.out.println("Please enter name: ");
+        playerName = name.nextLine();
+        player.setName(playerName);
+//        call to choose weapon
+        strWeapon = chooseWeapon();
+        System.out.println(playerName + " chose " + strWeapon);
+//        call to get the computers weapon
+        compWeapon = getCompWeapon();
+        System.out.println("Computer chose " + compWeapon);
+//        using the player object call to test who is the winner, passes in both weapon choices
+        player.testWinner(strWeapon, compWeapon);
     }
 
     public static String chooseWeapon() {
         //This function will print a menu of weapons for the player to choose from.
         //It will then take the integer input by the user and convert it into a string weapon.
         //It will then return the string weapon to main.
+        String strWeapon;
+        Scanner input = new Scanner(System.in);
+        System.out.println("Weapons Menu:\n 1. Water\n 2. Fire\n 3. Wood\n Choose a number: ");
+        int choice = input.nextInt();
+        if (choice == 1){
+            strWeapon = "Water";
+        } else if (choice == 2) {
+            strWeapon = "Fire";
+        } else {
+            strWeapon = "Wood";
+        }
+        return strWeapon;
 
     }
     public static String getCompWeapon() {
-        //This function will generate a random number to choose a wepon for the computer.
+        //This function will generate a random number to choose a weapon for the computer.
         //It will then convert the random number into a string weapon.
         //It will return the string weapon to main.
-
+        String cWeapon;
+        int random = 1 + (int)(Math.random() * 3);
+        if (random == 1){
+            cWeapon = "Water";
+        } else if (random == 2) {
+            cWeapon = "Fire";
+        } else {
+            cWeapon = "Wood";
+        }
+        return cWeapon;
     }
 }
