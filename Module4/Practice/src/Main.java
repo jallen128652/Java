@@ -51,6 +51,7 @@ public class Main {
             case 3:
                 strWeapon = "Bow";
                 break;
+//                omg don't forget the default, or it thinks the variable isn't initialized....
             default:
                 strWeapon = "Invalid choice";
                 break;
