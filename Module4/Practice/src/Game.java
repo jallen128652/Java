@@ -19,23 +19,23 @@ public class Game {
         this.strWeapon = strWeapon;
         this.compWeapon = compWeapon;
 //        if else to determine winner or tie could've probably been a switch case
-        if(strWeapon.equals("Water") && compWeapon.equals("Fire")){
-            System.out.println(name + " wins because water puts out fire.");
-        } else if (this.strWeapon.equals("Fire") && this.compWeapon.equals("Wood")) {
-            System.out.println(name + " wins because fire burns wood.");
-        } else if (this.strWeapon.equals("Wood") && this.compWeapon.equals("Water")) {
-            System.out.println(name + " wins because wood dams water.");
-        } else if (this.strWeapon.equals("Fire") && this.compWeapon.equals("Water")) {
-                System.out.println("Computer wins because water puts out fire.");
-        } else if (this.strWeapon.equals("Wood") && this.compWeapon.equals("Fire")) {
-            System.out.println("Computer wins because fire burns wood.");
-        } else if (this.strWeapon.equals("Water") && this.compWeapon.equals("Wood")) {
-            System.out.println("Computer wins because wood dams water.");
-        } else if (this.strWeapon.equals("Fire") || this.compWeapon.equals("Fire")) {
+        if(strWeapon.equals("Knife") && compWeapon.equals("Spear")){
+            System.out.println(name + " wins because Knife sneaks up on Spear.");
+        } else if (this.strWeapon.equals("Spear") && this.compWeapon.equals("Bow")) {
+            System.out.println(name + " wins because Spear does more damage than Bow.");
+        } else if (this.strWeapon.equals("Bow") && this.compWeapon.equals("Knife")) {
+            System.out.println(name + " wins because Bow out-ranges Knife.");
+        } else if (this.strWeapon.equals("Spear") && this.compWeapon.equals("Knife")) {
+                System.out.println("Computer wins because Knife sneaks up on Spear.");
+        } else if (this.strWeapon.equals("Bow") && this.compWeapon.equals("Spear")) {
+            System.out.println("Computer wins because Spear does more damage than Bow.");
+        } else if (this.strWeapon.equals("Knife") && this.compWeapon.equals("Bow")) {
+            System.out.println("Computer wins because Bow out-ranges Knife.");
+        } else if (this.strWeapon.equals("Spear") || this.compWeapon.equals("Spear")) {
             System.out.println("There was a tie");
-        } else if (this.strWeapon.equals("Wood") || this.compWeapon.equals("Wood")) {
+        } else if (this.strWeapon.equals("Bow") || this.compWeapon.equals("Bow")) {
             System.out.println("There was a tie");
-        } else if (this.strWeapon.equals("Water") || this.compWeapon.equals("Water")) {
+        } else if (this.strWeapon.equals("Knife") || this.compWeapon.equals("Knife")) {
             System.out.println("There was a tie");
         }
 

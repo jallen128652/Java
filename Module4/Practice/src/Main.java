@@ -39,14 +39,21 @@ public class Main {
         //It will then return the string weapon to main.
         String strWeapon;
         Scanner input = new Scanner(System.in);
-        System.out.println("Weapons Menu:\n 1. Water\n 2. Fire\n 3. Wood\n Choose a number: ");
+        System.out.println("Weapons Menu:\n 1. Knife\n 2. Spear\n 3. Bow\n Choose a number: ");
         int choice = input.nextInt();
-        if (choice == 1){
-            strWeapon = "Water";
-        } else if (choice == 2) {
-            strWeapon = "Fire";
-        } else {
-            strWeapon = "Wood";
+        switch (choice) {
+            case 1:
+                strWeapon = "Knife";
+                break;
+            case 2:
+                strWeapon = "Spear";
+                break;
+            case 3:
+                strWeapon = "Bow";
+                break;
+            default:
+                strWeapon = "Invalid choice";
+                break;
         }
         return strWeapon;
 
@@ -56,13 +63,14 @@ public class Main {
         //It will then convert the random number into a string weapon.
         //It will return the string weapon to main.
         String cWeapon;
+//        uses the random from the SomeRandomNumbers example instead of importing the random utility way
         int random = 1 + (int)(Math.random() * 3);
         if (random == 1){
-            cWeapon = "Water";
+            cWeapon = "Knife";
         } else if (random == 2) {
-            cWeapon = "Fire";
+            cWeapon = "Spear";
         } else {
-            cWeapon = "Wood";
+            cWeapon = "Bow";
         }
         return cWeapon;
     }
