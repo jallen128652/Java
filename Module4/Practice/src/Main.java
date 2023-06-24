@@ -41,21 +41,14 @@ public class Main {
         Scanner input = new Scanner(System.in);
         System.out.println("Weapons Menu:\n 1. Knife\n 2. Spear\n 3. Bow\n Choose a number: ");
         int choice = input.nextInt();
-        switch (choice) {
-            case 1:
-                strWeapon = "Knife";
-                break;
-            case 2:
-                strWeapon = "Spear";
-                break;
-            case 3:
-                strWeapon = "Bow";
-                break;
+//        enhanced switch, wouldn't stop giving me a caution till I converted it....
+        strWeapon = switch (choice) {
+            case 1 -> "Knife";
+            case 2 -> "Spear";
+            case 3 -> "Bow";
 //                omg don't forget the default, or it thinks the variable isn't initialized....
-            default:
-                strWeapon = "Invalid choice";
-                break;
-        }
+            default -> "Invalid choice";
+        };
         return strWeapon;
 
     }
