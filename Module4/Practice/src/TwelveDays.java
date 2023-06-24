@@ -1,12 +1,11 @@
 import java.util.*;
 public class TwelveDays {
-    public static void main (String args[]) {
+    public static void main (String[] args) {
         // Write your code here
-        int days = 0;
-        Scanner input = new Scanner(System.in);
-        System.out.println("From what day do you want to start the song The Twelve Days of Christmas?");
-        days = input.nextInt();
-        getChoice(days);
+//        declares the variable and calls the method to initialize the variable
+        int days = getChoice();
+
+
         if(days == 1) {
             System.out.println("On the " + days + "st day of Christmas\nMy true love gave to me");
         } else if (days == 2) {
@@ -45,9 +44,12 @@ public class TwelveDays {
                 break;
         }
     }
-    public static int getChoice(int days) {
+    public static int getChoice() {
         // Write your code here
-
+        Scanner input = new Scanner(System.in);
+        System.out.println("From what day do you want to start the song The Twelve Days of Christmas?");
+        int days;
+        days = input.nextInt();
         return days;
     }
 
