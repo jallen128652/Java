@@ -8,8 +8,7 @@ public class Loops {
             num1++;
         }
 //        for loop
-        var i = 0;
-        for (i = 0; i < 5; i++){
+        for (var i = 0; i < 5; i++){
             System.out.println("The current number is " + (i + 1));
         }
 //        do while loop
