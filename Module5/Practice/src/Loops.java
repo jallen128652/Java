@@ -21,7 +21,20 @@ public class Loops {
         loop();
         loop2();
         loop3();
+//        loop fusion example: can be fused
+        for (int x = 0; x < 10; x++) {
+            System.out.println(x);
+        }
+        for (int x = 0; x < 10; x++) {
+            System.out.println("This is a non fused loop");
+        }
+//        fused loop
+        for (int x = 0; x < 10; x++) {
+            System.out.println(x);
+            System.out.println("This is a fused loop");
+        }
     }
+
 
     //    method called from main with indefinite while loop
     public static void loop() {
