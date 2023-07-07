@@ -35,7 +35,7 @@ public class StudentTutoring {
         }
 
         System.out.println("You chose exit.");
-        String studentName = practice.getName();
+        String studentName = Student.getName();
         System.out.println("Final results for " + studentName);
         double percent;
         numCounter = practice.getNumProblems();
