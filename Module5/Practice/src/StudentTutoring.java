@@ -2,14 +2,14 @@ import java.util.Scanner;
 public class StudentTutoring {
     public static void main(String[] args) {
 //       declarations
-        int selection, correctCounter, correctCounter1 = 0, correctCounter2 = 0, correctCounter3 = 0;
+        int selection, correctCounter, numCounter;
 //        create instance
         Student practice = new Student();
 //        input, get, set name
         Scanner input = new Scanner(System.in);
         System.out.println("Please enter your name: ");
-        practice.name = input.nextLine();
-        practice.setName(practice.name);
+        Student.name = input.nextLine();
+        practice.setName(Student.name);
 
 
 //        select type of math practice menu
@@ -22,11 +22,11 @@ public class StudentTutoring {
 // menu decision structure
         while (selection != 4) {
             if (selection == 1) {
-                correctCounter1 = addition(correctCounter1);
+                addition();
             } else if (selection == 2) {
-                correctCounter2 = subtraction(correctCounter2);
+                subtraction();
             } else if (selection == 3) {
-                correctCounter3 = multiplication(correctCounter3);
+                multiplication();
             }
             System.out.println("Math Tutor Menu\n 1. Addition\n 2. Subtraction\n 3. Multiplication\n 4. Exit");
             System.out.println("Please enter a selection: ");
@@ -35,15 +35,31 @@ public class StudentTutoring {
         }
 
         System.out.println("You chose exit.");
-        correctCounter = correctCounter1 + correctCounter2 + correctCounter3;
-        display(Student.getNumProblems(Student.numProblems), correctCounter, practice.name);
+        String studentName = practice.getName();
+        System.out.println("Final results for " + studentName);
+        double percent;
+        numCounter = practice.getNumProblems();
+        correctCounter = practice.getCorrectProblems();
+        percent = (double) correctCounter / numCounter * 100;
+        System.out.println("Total problems attempted: " + numCounter);
+        System.out.println("Total problems correct: " + correctCounter);
+        System.out.println("Your score is " + String.format("%.0f", percent));
+        if (percent >= 90 && percent <= 100) {
+            System.out.println("Your doing great, keep it up!");
+        } else if (percent >= 80 && percent <= 89) {
+            System.out.println("Your doing good, keep it practicing!");
+        } else if (percent >= 70 && percent <= 79) {
+            System.out.println("Your doing ok, need more practice!");
+        } else if (percent > 1 && percent <= 69) {
+            System.out.println("Keep practicing!");
+        }
     }
 
     //    methods for the actual practice
-    static int addition(int correctCounter1) {
+    static void addition() {
         Scanner input = new Scanner(System.in);
         System.out.println("You chose Addition.");
-        int tries, rand1, rand2, answer, correctAnswer, counter = 0;
+        int tries, rand1, rand2, answer, correctAnswer;
         System.out.println("Press 1 to try an Addition problem and any other number to stop.");
         tries = input.nextInt();
         while (tries == 1) {
@@ -57,28 +73,26 @@ public class StudentTutoring {
             answer = input.nextInt();
             input.nextLine();
 //            compare user answer with correct answer
+
             if (answer == correctAnswer) {
                 //            display right answer and output if user is correct
                 System.out.println("Correct! " + rand1 + " + " + rand2 + " = " + answer);
-                correctCounter1 += 1;
-                counter++;
-                Student.setNumProblems(counter);
+                Student.setNumProblems();
+                Student.setCorrectProblems();
             } else {
                 System.out.println("Incorrect! " + rand1 + " + " + rand2 + " = " + correctAnswer);
-                counter++;
-                Student.setNumProblems(counter);
+                Student.setNumProblems();
             }
 //            update loop control variable
             System.out.println("Press 1 to try an Addition problem and any other number to stop.");
             tries = input.nextInt();
         }
-        return correctCounter1;
     }
 
-    static int subtraction(int correctCounter2) {
+    static void subtraction() {
         Scanner input = new Scanner(System.in);
         System.out.println("You chose Subtraction.");
-        int tries, rand1, rand2, answer, correctAnswer, counter = 0;
+        int tries, rand1, rand2, answer, correctAnswer;
         System.out.println("Press 1 to try an Subtraction problem and any other number to stop.");
         tries = input.nextInt();
         while (tries == 1) {
@@ -92,28 +106,26 @@ public class StudentTutoring {
             answer = input.nextInt();
             input.nextLine();
 //            compare user answer with correct answer
+
             if (answer == correctAnswer) {
                 //            display right answer and output if user is correct
                 System.out.println("Correct! " + rand1 + " - " + rand2 + " = " + answer);
-                correctCounter2 += 1;
-                counter++;
-                Student.setNumProblems(counter);
+                Student.setNumProblems();
+                Student.setCorrectProblems();
             } else {
-                System.out.println("Incorrect! " + rand1 + " - " + rand2 + " = " + correctAnswer);
-                counter++;
-                Student.setNumProblems(counter);
+                System.out.println("Incorrect! " + rand1 + " + " + rand2 + " = " + correctAnswer);
+                Student.setNumProblems();
             }
 //            update loop control variable
             System.out.println("Press 1 to try an Subtraction problem and any other number to stop.");
             tries = input.nextInt();
         }
-        return correctCounter2;
     }
 
-    static int multiplication(int correctCounter3) {
+    static void multiplication() {
         Scanner input = new Scanner(System.in);
         System.out.println("You chose Multiplication.");
-        int tries, rand1, rand2, answer, correctAnswer, counter = 0;
+        int tries, rand1, rand2, answer, correctAnswer;
         System.out.println("Press 1 to try an Multiplication problem and any other number to stop.");
         tries = input.nextInt();
         while (tries == 1) {
@@ -127,39 +139,19 @@ public class StudentTutoring {
             answer = input.nextInt();
             input.nextLine();
 //            compare user answer with correct answer
+
             if (answer == correctAnswer) {
                 //            display right answer and output if user is correct
                 System.out.println("Correct! " + rand1 + " x " + rand2 + " = " + answer);
-                correctCounter3 += 1;
-                counter++;
-                Student.setNumProblems(counter);
+                Student.setNumProblems();
+                Student.setCorrectProblems();
             } else {
-                System.out.println("Incorrect! " + rand1 + " x " + rand2 + " = " + correctAnswer);
-                counter++;
-                Student.setNumProblems(counter);
+                System.out.println("Incorrect! " + rand1 + " + " + rand2 + " = " + correctAnswer);
+                Student.setNumProblems();
             }
 //            update loop control variable
             System.out.println("Press 1 to try an Multiplication problem and any other number to stop.");
             tries = input.nextInt();
-        }
-        return correctCounter3;
-    }
-    public static void display(int numProblems, int correctCounter, String name){
-        System.out.println("Final results for " + name);
-        double percent;
-        numProblems = Student.getNumProblems(Student.numProblems);
-        percent = (double) correctCounter / numProblems * 100;
-        System.out.println("Total problems attempted: " + numProblems);
-        System.out.println("Total problems correct: " + correctCounter);
-        System.out.println("Your score is " + String.format("%.0f", percent));
-        if(percent <= 100 || percent >= 90){
-            System.out.println("Your doing great, keep it up!");
-        }else if(percent <= 89 || percent >= 80) {
-            System.out.println("Your doing good, keep it practicing!");
-        }else if(percent <= 79 || percent >= 70) {
-            System.out.println("Your doing ok, need more practice!");
-        }else if(percent <= 69){
-            System.out.println("Keep practicing!");
         }
     }
 }

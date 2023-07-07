@@ -1,18 +1,24 @@
 public class Student {
-    String name;
-    static int numProblems;
-
-    public static void setNumProblems(int numProblems){
-        Student.numProblems = numProblems;
-    }
-    public static int getNumProblems(int numProblems){
-        return Student.numProblems;
-    }
+    static String name;
+    private static int numProblems;
+    private static int correctProblems;
     public void setName(String name){
-        this.name = name;
+        Student.name = name;
     }
-    public String getName(){
+    public static String getName(){
         return name;
+    }
+    public static void setNumProblems(){
+        numProblems++;
+    }
+    public int getNumProblems(){
+        return numProblems;
+    }
+    public static void setCorrectProblems(){
+        correctProblems++;
+    }
+    public int getCorrectProblems(){
+        return correctProblems;
     }
 
 }
