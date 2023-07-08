@@ -1,15 +1,19 @@
 import java.util.Scanner;
 public class StudentTutoring {
     public static void main(String[] args) {
-//       declarations
-        int selection, correctCounter, numCounter;
-//        create instance
+//       mainfx local declarations
+        int selection;
+//        create instances of objects for subclasses and imported classes
+//        subclass object
         Student practice = new Student();
-//        input, set name
+//        imported class object
         Scanner input = new Scanner(System.in);
+
         System.out.println("Please enter your name: ");
-        Student.name = input.nextLine();
-        practice.setName(Student.name);
+//        declare and initialize var into the input stream
+        String name = input.nextLine();
+//        object.subclassFx(var)
+        practice.setName(name);
 
 
 //        select type of math practice menu
@@ -24,11 +28,11 @@ public class StudentTutoring {
 // menu decision while loop with if/else if structure
         while (selection != 4) {
             if (selection == 1) {
-                addition();
+                addition(practice, input);
             } else if (selection == 2) {
-                subtraction();
+                subtraction(practice, input);
             } else if (selection == 3) {
-                multiplication();
+                multiplication(practice, input);
             }
 //            update loop control variable
             System.out.println("Math Tutor Menu\n 1. Addition\n 2. Subtraction\n 3. Multiplication\n 4. Exit");
@@ -38,34 +42,16 @@ public class StudentTutoring {
         }
 //          print final results
         System.out.println("You chose exit.");
-//        call getter
-        String studentName = Student.getName();
-        System.out.println("Final results for " + studentName);
-        double percent;
-//        call getters
-        numCounter = practice.getNumProblems();
-        correctCounter = practice.getCorrectProblems();
-//        do percentage math
-        percent = (double) correctCounter / numCounter * 100;
-//        output results
-        System.out.println("Total problems attempted: " + numCounter);
-        System.out.println("Total problems correct: " + correctCounter);
-        System.out.println("Your score is " + String.format("%.0f", percent));
-//        control structure for final feedback to user
-        if (percent >= 90 && percent <= 100) {
-            System.out.println("Your doing great, keep it up!");
-        } else if (percent >= 80 && percent <= 89) {
-            System.out.println("Your doing good, keep it practicing!");
-        } else if (percent >= 70 && percent <= 79) {
-            System.out.println("Your doing ok, need more practice!");
-        } else if (percent > 1 && percent <= 69) {
-            System.out.println("Keep practicing!");
-        }
+//        call subclass displayFx
+//        note object.subclassFx()
+        practice.display();
+
+
     }
 
     //    methods for the actual practice
-    static void addition() {
-        Scanner input = new Scanner(System.in);
+//    note the Class and object being passed in ex. Student practice,
+    static void addition(Student practice, Scanner input) {
         System.out.println("You chose Addition.");
 //        declare locals
         int tries, rand1, rand2, answer, correctAnswer;
@@ -86,12 +72,13 @@ public class StudentTutoring {
             if (answer == correctAnswer) {
                 //            display right answer and output if user is correct
                 System.out.println("Correct! " + rand1 + " + " + rand2 + " = " + answer);
-//                call setters to increment the counts
-                Student.setNumProblems();
-                Student.setCorrectProblems();
+//                call fx to increment the counts
+//                note object.subclassFx()
+                practice.setNumProblems();
+                practice.setCorrectProblems();
             } else {
                 System.out.println("Incorrect! " + rand1 + " + " + rand2 + " = " + correctAnswer);
-                Student.setNumProblems();
+                practice.setNumProblems();
             }
 //            update loop control variable
             System.out.println("Press 1 to try an Addition problem and any other number to stop.");
@@ -99,8 +86,7 @@ public class StudentTutoring {
         }
     }
 
-    static void subtraction() {
-        Scanner input = new Scanner(System.in);
+    static void subtraction(Student practice, Scanner input) {
         System.out.println("You chose Subtraction.");
 //        declare locals
         int tries, rand1, rand2, answer, correctAnswer;
@@ -121,12 +107,12 @@ public class StudentTutoring {
             if (answer == correctAnswer) {
                 //            display right answer and output if user is correct
                 System.out.println("Correct! " + rand1 + " - " + rand2 + " = " + answer);
-//                call setters to increment the counts
-                Student.setNumProblems();
-                Student.setCorrectProblems();
+//                call object.subclassFx() to increment the counts
+                practice.setNumProblems();
+                practice.setCorrectProblems();
             } else {
                 System.out.println("Incorrect! " + rand1 + " + " + rand2 + " = " + correctAnswer);
-                Student.setNumProblems();
+                practice.setNumProblems();
             }
 //            update loop control variable
             System.out.println("Press 1 to try an Subtraction problem and any other number to stop.");
@@ -134,8 +120,7 @@ public class StudentTutoring {
         }
     }
 
-    static void multiplication() {
-        Scanner input = new Scanner(System.in);
+    static void multiplication(Student practice, Scanner input) {
         System.out.println("You chose Multiplication.");
 //        declare locals
         int tries, rand1, rand2, answer, correctAnswer;
@@ -155,12 +140,12 @@ public class StudentTutoring {
             if (answer == correctAnswer) {
                 //            display right answer and output if user is correct
                 System.out.println("Correct! " + rand1 + " x " + rand2 + " = " + answer);
-//                call setters to increment the counts
-                Student.setNumProblems();
-                Student.setCorrectProblems();
+//                 call object.subclassFx() to increment the counts
+                practice.setNumProblems();
+                practice.setCorrectProblems();
             } else {
                 System.out.println("Incorrect! " + rand1 + " + " + rand2 + " = " + correctAnswer);
-                Student.setNumProblems();
+                practice.setNumProblems();
             }
 //            update loop control variable
             System.out.println("Press 1 to try an Multiplication problem and any other number to stop.");
