@@ -42,7 +42,7 @@ public class StudentTutoring {
         practice.display();
     }
     //    methods for the actual practice
-//    note the Class and object being passed in ex. Student practice,
+//    note the Class and object being passed in ex. Student practice, Scanner input
     static void addition(Student practice, Scanner input) {
         System.out.println("You chose Addition.");
 //        declare locals
