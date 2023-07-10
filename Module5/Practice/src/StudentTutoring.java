@@ -104,7 +104,7 @@ public class StudentTutoring {
                     practice.setNumProblems();
                     practice.setCorrectProblems();
                 } else {
-                    System.out.println("Incorrect! " + rand1 + " + " + rand2 + " = " + correctAnswer);
+                    System.out.println("Incorrect! " + rand1 + " - " + rand2 + " = " + correctAnswer);
                     practice.setNumProblems();
                 }
 //                if rand2 is the greater value
@@ -155,7 +155,7 @@ public class StudentTutoring {
                 practice.setNumProblems();
                 practice.setCorrectProblems();
             } else {
-                System.out.println("Incorrect! " + rand1 + " + " + rand2 + " = " + correctAnswer);
+                System.out.println("Incorrect! " + rand1 + " x " + rand2 + " = " + correctAnswer);
                 practice.setNumProblems();
             }
 //            update loop control variable
