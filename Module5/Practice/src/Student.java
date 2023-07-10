@@ -5,9 +5,9 @@ public class Student {
     private int correctProblems;
 //    pass in the name value
 //    note datatype and var
-    public void setName(String name){
-//        note className.classVar confused on this still
-        Student.name = name;
+    public void setName(String studName){
+//        changed name of passed in var to prevent ambiguity
+        name = studName;
     }
 //    note for subclassFx's they have access to subclass vars
     public void setNumProblems(){
@@ -18,6 +18,9 @@ public class Student {
 //        increment the counts
         correctProblems++;
     }
+//    moved the final print to a fx here. If I understand correctly,
+//    I could also move this to the main class with getter fx's to call
+//    for the values?
     public void display(){
         System.out.println("Final results for " + name);
         double percent;

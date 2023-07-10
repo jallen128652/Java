@@ -97,22 +97,43 @@ public class StudentTutoring {
             //        generate to rand nums
             rand1 = 1 + (int) (Math.random() * 10);
             rand2 = 1 + (int) (Math.random() * 10);
-            correctAnswer = rand1 - rand2;
-//            display them as an addition problem
-            System.out.println(rand1 + " - " + rand2 + " = ?");
-//            get user answer
-            answer = input.nextInt();
-            input.nextLine();
+//            changes to ensure the user doesn't have to enter a negative number
+//            decision structure to choose greater rand value
+            if (rand1 >= rand2) {
+                correctAnswer = rand1 - rand2;
+                System.out.println(rand1 + " - " + rand2 + " = ?");
+                //            get user answer
+                answer = input.nextInt();
+                input.nextLine();
 //            compare user answer with correct answer
-            if (answer == correctAnswer) {
-                //            display right answer and output if user is correct
-                System.out.println("Correct! " + rand1 + " - " + rand2 + " = " + answer);
+                if (answer == correctAnswer) {
+                    //            display right answer and output if user is correct
+                    System.out.println("Correct! " + rand1 + " - " + rand2 + " = " + answer);
 //                call object.subclassFx() to increment the counts
-                practice.setNumProblems();
-                practice.setCorrectProblems();
+                    practice.setNumProblems();
+                    practice.setCorrectProblems();
+                } else {
+                    System.out.println("Incorrect! " + rand1 + " + " + rand2 + " = " + correctAnswer);
+                    practice.setNumProblems();
+                }
+//                if rand2 is the greater value
             } else {
-                System.out.println("Incorrect! " + rand1 + " + " + rand2 + " = " + correctAnswer);
-                practice.setNumProblems();
+                correctAnswer = rand2 - rand1;
+                System.out.println(rand2 + " - " + rand1 + " = ?");
+                //            get user answer
+                answer = input.nextInt();
+                input.nextLine();
+//            compare user answer with correct answer
+                if (answer == correctAnswer) {
+                    //            display right answer and output if user is correct
+                    System.out.println("Correct! " + rand2 + " - " + rand1 + " = " + answer);
+//                call object.subclassFx() to increment the counts
+                    practice.setNumProblems();
+                    practice.setCorrectProblems();
+                } else {
+                    System.out.println("Incorrect! " + rand2 + " - " + rand1 + " = " + correctAnswer);
+                    practice.setNumProblems();
+                }
             }
 //            update loop control variable
             System.out.println("Press 1 to try an Subtraction problem and any other number to stop.");
