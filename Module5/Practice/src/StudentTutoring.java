@@ -8,23 +8,18 @@ public class StudentTutoring {
         Student practice = new Student();
 //        imported class object
         Scanner input = new Scanner(System.in);
-
+//      prompt user for name
         System.out.println("Please enter your name: ");
 //        declare and initialize var into the input stream
         String name = input.nextLine();
 //        object.subclassFx(var)
         practice.setName(name);
-
-
 //        select type of math practice menu
         System.out.println("Math Tutor Menu\n 1. Addition\n 2. Subtraction\n 3. Multiplication\n 4. Exit");
         System.out.println("Please enter a selection: ");
         selection = input.nextInt();
-//        clear input stream, don't know if this is correct, had issues without it though put them
-//        after most inputs till the issues gone(feedback please)
+//        clear input stream
         input.nextLine();
-
-
 // menu decision while loop with if/else if structure
         while (selection != 4) {
             if (selection == 1) {
@@ -45,10 +40,7 @@ public class StudentTutoring {
 //        call subclass displayFx
 //        note object.subclassFx()
         practice.display();
-
-
     }
-
     //    methods for the actual practice
 //    note the Class and object being passed in ex. Student practice,
     static void addition(Student practice, Scanner input) {
@@ -85,7 +77,6 @@ public class StudentTutoring {
             tries = input.nextInt();
         }
     }
-
     static void subtraction(Student practice, Scanner input) {
         System.out.println("You chose Subtraction.");
 //        declare locals
@@ -140,7 +131,6 @@ public class StudentTutoring {
             tries = input.nextInt();
         }
     }
-
     static void multiplication(Student practice, Scanner input) {
         System.out.println("You chose Multiplication.");
 //        declare locals

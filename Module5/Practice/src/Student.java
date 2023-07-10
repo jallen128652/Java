@@ -1,6 +1,6 @@
 public class Student {
 //    declare local vars
-    static String name;
+    private String name;
     private int numProblems;
     private int correctProblems;
 //    pass in the name value
@@ -20,7 +20,7 @@ public class Student {
     }
 //    moved the final print to a fx here. If I understand correctly,
 //    I could also move this to the main class with getter fx's to call
-//    for the values?
+//    for the values.
     public void display(){
         System.out.println("Final results for " + name);
         double percent;
