@@ -22,3 +22,22 @@ public class StringBuilderDemo {
         System.out.println("The address is " + addressString);
     }
 }
+//for comparing the contents of two stringBuilder objects:
+// obj1.toString().equals(obj2.toString());
+// the stringBuilder obj's must be converted to Strings
+
+//additional StringBuilder class methods: append() and insert()
+//example:
+//StringBuilder phrase = new StringBuilder("Happy");
+//phrase.append(" birthday");
+// the object phrase now holds Happy Birthday
+// append inserts at the end. insert() accepts args for position num
+// example: phrase.insert(6, "30th ")
+// new output would be Happy 30th birthday
+// can also phrase.setCharAt(6, '4") which changes it to:
+//Happy 40th birthday
+// to extract a StringBuilder character you can use the phrase.charAt()
+// example char letter = phrase.charAt(0);
+//printing the letter var would print 'H'
+//exceeding the index numbers for the StringBuilder object would result in
+//syntax error.
