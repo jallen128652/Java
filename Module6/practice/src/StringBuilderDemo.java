@@ -20,10 +20,21 @@ public class StringBuilderDemo {
                 addStringCapacity);
         nameString.setLength(20);
         System.out.println("The address is " + addressString);
+
+        String string1 = "happay";
+        String string2 = "happay";
+        if (string1.equals(string2)){
+            System.out.println("equal");
+        } else {
+            System.out.println("not equal");
+        }
     }
 }
 //for comparing the contents of two stringBuilder objects:
 // obj1.toString().equals(obj2.toString());
+//for comparing String contents: string1.equals(string2);
+//can also use equalsIgnoreCase();
+
 // the stringBuilder obj's must be converted to Strings
 
 //additional StringBuilder class methods: append() and insert()
