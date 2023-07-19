@@ -14,6 +14,7 @@ public class ValidatePassword {
             int upperCount = 0;
             int lowerCount = 0;
             for (int x = 0; x < length; x++) {
+//                note Class.staticMethod(arrayArg[])
                 if (Character.isDigit(pwChar[x])) {
                     digitCount++;
                 }
