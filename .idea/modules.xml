@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Module1/Module1.iml" filepath="$PROJECT_DIR$/Module1/Module1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module2/Module2.iml" filepath="$PROJECT_DIR$/Module2/Module2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module4/Module4.iml" filepath="$PROJECT_DIR$/Module4/Module4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module6/Module6.iml" filepath="$PROJECT_DIR$/Module6/Module6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module1/Practice/Practice.iml" filepath="$PROJECT_DIR$/Module1/Practice/Practice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module5/Practice/Practice1.iml" filepath="$PROJECT_DIR$/Module5/Practice/Practice1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module5/example code to visualize/example code to visualize.iml" filepath="$PROJECT_DIR$/Module5/example code to visualize/example code to visualize.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module1/module1_mastery/module1_mastery.iml" filepath="$PROJECT_DIR$/Module1/module1_mastery/module1_mastery.iml" />
+      <module fileurl="file://$PROJECT_DIR$/repos.iml" filepath="$PROJECT_DIR$/repos.iml" />
+    </modules>
+  </component>
+</project>
