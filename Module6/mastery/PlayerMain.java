@@ -40,17 +40,18 @@ public class PlayerMain {
         // // using a rand to select, pass as a stringbuilder object to gamefx
 
         phrase1.append(" " + phrase[rand]);
-        gameFx(phrase1, player1, null);
+        gameFx(phrase1, player1);
 
     }
 
     // gameFx: create function for comparing the stringbuilder, append, prompt,
     // search, append, tostring, compare, print, prompt again
-    public static void gameFx(StringBuilder phrase1, Player player1, Scanner input) {
+    public static void gameFx(StringBuilder phrase1, Player player1) {
         // store original phrase as a string
         String originalPhrase = phrase1.toString();
         // create clue objects
         StringBuilder clue = new StringBuilder();
+        // declare obj to store string
         String clueString;
         // declare var for the to pass into the Player class numberAttempts()
         int numAttempts = 0;
@@ -65,10 +66,14 @@ public class PlayerMain {
                     clue.append(' ');
                 }
             }
-            //
+            // show clue
             System.out.println("Your clue is: " + clue);
-            System.out.println("Please guess a letter and press enter. ");
-            String attempt = input.nextLine();
+            // prompt
+            System.out.println("Please guess a letter and press enter or enter a complete guess of the phrase. ");
+            // input
+            Scanner input2 = new Scanner(System.in);
+            String attempt = input2.nextLine();
+            // get input length to determine if it's a char or a complete guess
             int attLength = attempt.length();
             // call to number of attempts in player class, will increment the value
             player1.numberAttempts(numAttempts);
@@ -79,7 +84,7 @@ public class PlayerMain {
                     System.out.println("Incorrect, please continue");
                 }
             } else {
-                // compare input char to phrase using idexOf()
+                // compare input char to phrase using indexOf()
                 // if(match){
                 // append clue
                 // }
