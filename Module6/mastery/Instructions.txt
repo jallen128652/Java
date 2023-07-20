@@ -1,0 +1,38 @@
+Create a simple guessing game, similar to Hangman, in which the user guesses letters and then attempts to guess a hidden phrase. 
+
+Display a phrase in which all of the letters are replaced by asterisks or another symbol. 
+Do not use the underscoring because it will look like a long line instead of individual symbols. for example, ** **** (for Go Team). 
+
+Each time the user guesses a letter, either place the letter in the correct spot (or spots) in the phrase and display the phrase again
+ or tell the user the guessed letter is not in the phrase. Display a congratulatory message when the entire correct phrase has been deduced.
+
+The phrase to be guessed is selected randomly from a list of at least 5 phrases. It must be phrases that contain at least 2 or more words per phrase. 
+(Hint: Create 5 different string variables or an array of strings. Then generate a random number between 1 and 5 to select the corresponding phrase.) 
+Do not include any punctuation in your phrases. Use letters and spaces only.
+
+The clue is presented to the user with symbols replacing letters to be guessed but with spaces in the appropriate locations. 
+For example, if the phrase to be guessed is No man is an island, then the user sees the following as a first clue:
+
+@@ @@@ @@ @@ @@@@@@
+
+The spaces provide valuable information as to where individual words start and end.
+
+Make sure that when a user makes a correct guess, all the matching letters are filled in, regardless of case.
+
+For each guess the user can either enter a single letter, or they may enter the entire phrase if they think they can solve it. If they enter more than one letter,
+ then test to see if what they entered is equal to the hidden phrase. If they enter only one letter then find all occurrences of that letter in the phrase.
+
+If they attempt to guess the whole phrase and get it correct, then print a congratulatory message. Then ask if they would like to play again.
+ If they guess the phrase wrong then tell them they were wrong and ask for another guess.
+
+If they guess a single letter and it is in the phrase, the reveal all occurrences of that letter. If they guess a single letter and it is NOT in the phrase,
+ then tell them it was not in the phrase. Then ask for another guess.
+
+If all of the letters in the phrase have been revealed, then tell them they have solved the secret phrase and ask them if they would like to play again.
+Each round of the game ends when the player either guesses the phrase correctly or all the letters have been guessed and no * are left.
+Make the game loop so after each round so the user can choose to play again and a different phrase will be selected.
+
+Also create a Player class. This class will contain one String variable for the player's name and one integer variable for the number of guesses. 
+ In the main program ask the user for their name and set it in the class. Each time the user attempts a guess for the secret phrase add on the integer variable in Player class.
+  After a round has been completed and a congratulatory message is printed, be sure that message includes the player's name and the number of attempts it took them to reveal the secret phrase.
+   Include another function in the class that can reset the number of guesses at the beginning of each round.
