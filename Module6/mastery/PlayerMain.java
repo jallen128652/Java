@@ -86,7 +86,7 @@ public class PlayerMain {
                 // append clue
                 // }
             }
-            // need another nested loop that promts again for entry
+            // converts clue and updates the loop control
             clueString = clue.toString();
 
         } while (!originalPhrase.equals(clueString));
