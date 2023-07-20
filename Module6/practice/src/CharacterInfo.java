@@ -28,4 +28,3 @@ public class CharacterInfo {
         }
     }
 }
-//this new setup sucks
