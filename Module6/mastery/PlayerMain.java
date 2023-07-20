@@ -20,13 +20,11 @@ public class PlayerMain {
 
         int tryAgain;
         do {
-            // constructors to call methods
+            // constructors to call methods and pass in objects
             randPhrase(player1, phrase1);
             System.out.println("Play another round?\nEnter 1 for yes and any other number to quit");
             tryAgain = input.nextInt();
         } while (tryAgain == 1);
-        // call display()
-
     }
 
     // randPhraseFx: create functions for storing and calling phrases 5 phrases
@@ -76,7 +74,7 @@ public class PlayerMain {
             player1.numberAttempts(numAttempts);
             if (attLength == length) {
                 if (originalPhrase.equals(attempt)) {
-                    System.out.println("You win!");
+                    System.out.println("Congratulations, you win!");
                 } else {
                     System.out.println("Incorrect, please continue");
                 }
