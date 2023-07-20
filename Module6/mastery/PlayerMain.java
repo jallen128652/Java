@@ -93,7 +93,6 @@ public class PlayerMain {
             clueString = clue.toString();
 
         } while (!originalPhrase.equals(clueString));
-        // call display
-        // call reset numAtt
+        // call display and reset numAtt
     }
 }
