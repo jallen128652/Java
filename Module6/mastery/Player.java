@@ -16,4 +16,8 @@ public class Player {
         return numAtt;
     }
 
+    public void display(String name, int numAtt){
+        // print the final stats
+    }
+
 }

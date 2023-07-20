@@ -4,8 +4,10 @@ public class PlayerMain {
     public static void main(String[] args) {
         // create instance object of the player class
         Player player1 = new Player();
+        // create class object for stringbuilder
+        StringBuilder phrase1 = new StringBuilder();
         // declare vars
-        int numAttempts = 0;
+
         // print welcome and prompt player
         System.out.println("Welcome to Guess That Phrase!");
         System.out.println("Please enter your name: ");
@@ -21,16 +23,16 @@ public class PlayerMain {
         int tryAgain;
         do {
             // constructors to call methods
-            randPhrase();
+            randPhrase(player1, phrase1);
             System.out.println("Play another round?\nEnter 1 for yes and any other number to quit");
             tryAgain = input.nextInt();
         } while (tryAgain == 1);
-        // test call to number of attempts
-        player1.numberAttempts(numAttempts);
+        // call display()
+
     }
 
     // randPhraseFx: create functions for storing and calling phrases 5 phrases
-    public static void randPhrase() {
+    public static void randPhrase(Player player1, StringBuilder phrase1) {
 
         int rand = (int) (Math.random() * 5);
         String[] phrase = new String[5];
@@ -40,30 +42,60 @@ public class PlayerMain {
         phrase[3] = "are we there yet";
         phrase[4] = "how are you doing";
         // // using a rand to select, pass as a stringbuilder object to gamefx
-        StringBuilder phrase1 = new StringBuilder();
+
         phrase1.append(" " + phrase[rand]);
-        gameFx(phrase1);
+        gameFx(phrase1, player1);
+
     }
 
-    public static void gameFx(StringBuilder phrase1) {
-        // test passed int phrase1
-        System.out.println(phrase1);
-        // gameFx: create function for comparing the stringbuilder append using
+    // gameFx: create function for comparing the stringbuilder, append, prompt,
+    // search, append, tostring, compare, print, prompt again
+    public static void gameFx(StringBuilder phrase1, Player player1) {
+        // store original phrase as a string
+        String originalPhrase = phrase1.toString();
+        // create clue objects
+        StringBuilder clue = new StringBuilder();
+        String clueString;
+        // create local scanner obj
+        Scanner input = new Scanner(System.in);
+        // declare var for the to pass into the Player class numberAttempts()
+        int numAttempts = 0;
+        // add a do while loop that continues until originalPhrase.equals(clue), clue
+        // must also be converted tostring each round and stored in a separate var name
+        // loop through the length and store the @ value in clue for ea char in phrase1
+        do {
+            int length = phrase1.length();
+            for (int x = 0; x < length; x++) {
+                if (phrase1.charAt(x) != ' ') {
+                    clue.append('@');
+                } else {
+                    clue.append(' ');
+                }
+            }
+            //
+            System.out.println("Your clue is: " + clue);
+            System.out.println("Please guess a letter and press enter. ");
+            String attempt = input.nextLine();
+            int attLength = attempt.length();
+            // call to number of attempts in player class, will increment the value
+            player1.numberAttempts(numAttempts);
+            if (attLength == length) {
+                if (originalPhrase.equals(attempt)) {
+                    System.out.println("You win!");
+                } else {
+                    System.out.println("Incorrect, please continue");
+                }
+            } else {
+                // compare input char to phrase using idexOf()
+                // if(match){
+                // append clue
+                // }
+            }
+            // need another nested loop that promts again for entry
+            clueString = clue.toString();
 
-        // indexOf() to search and append as long as the value returned isnt -1
-        // provide clue prior to attempts
-        // get user input for attempt
-        // allow for option to solve and use compare
-        // use indexOf() to check for matches
-
-        // if matches setCharAt()
-        // call numberAttempts()
-        // print current StringBuilder
-        // prompt again
-
-        // else
-        // print no match
-        // call numberAttempts()
-        // prompt again
+        } while (!originalPhrase.equals(clueString));
+        // call display
+        // reset phrase, numAtt
     }
 }
