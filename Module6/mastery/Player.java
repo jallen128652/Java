@@ -16,8 +16,9 @@ public class Player {
         return numAtt;
     }
 
-    public void display(String name, int numAtt){
-        // print the final stats
+    public void display(String name, int numAtt) {
+        // print the round stats
+        // set numAtt back to 0
     }
 
 }

@@ -17,8 +17,6 @@ public class PlayerMain {
         // pass name to player class to set
         // note format classObject.classMethod();
         player1.setName(name);
-        // create do while loop for game that repeats till the player chooses option 2
-        // and calls randPhrase()
 
         int tryAgain;
         do {
@@ -44,23 +42,20 @@ public class PlayerMain {
         // // using a rand to select, pass as a stringbuilder object to gamefx
 
         phrase1.append(" " + phrase[rand]);
-        gameFx(phrase1, player1);
+        gameFx(phrase1, player1, null);
 
     }
 
     // gameFx: create function for comparing the stringbuilder, append, prompt,
     // search, append, tostring, compare, print, prompt again
-    public static void gameFx(StringBuilder phrase1, Player player1) {
+    public static void gameFx(StringBuilder phrase1, Player player1, Scanner input) {
         // store original phrase as a string
         String originalPhrase = phrase1.toString();
         // create clue objects
         StringBuilder clue = new StringBuilder();
         String clueString;
-        // create local scanner obj
-        Scanner input = new Scanner(System.in);
         // declare var for the to pass into the Player class numberAttempts()
         int numAttempts = 0;
-        // add a do while loop that continues until originalPhrase.equals(clue), clue
         // must also be converted tostring each round and stored in a separate var name
         // loop through the length and store the @ value in clue for ea char in phrase1
         do {
@@ -96,6 +91,6 @@ public class PlayerMain {
 
         } while (!originalPhrase.equals(clueString));
         // call display
-        // reset phrase, numAtt
+        // call reset numAtt
     }
 }
