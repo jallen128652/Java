@@ -51,7 +51,7 @@ public class PlayerMain {
         // gameFx: create function for comparing the stringbuilder append using
 
         // indexOf() to search and append as long as the value returned isnt -1
-        // provide clue prior to attemps
+        // provide clue prior to attempts
         // get user input for attempt
         // allow for option to solve and use compare
         // use indexOf() to check for matches
