@@ -22,6 +22,7 @@ public class PlayerMain {
         int tryAgain;
         do {
             // constructors to call methods and pass in objects
+            // note format constructor(arg/s)
             randPhrase(phrase1);
             cluePhrase(phrase1, clue);
             gameFx(phrase1, player1, clue);
