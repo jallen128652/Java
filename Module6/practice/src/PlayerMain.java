@@ -20,9 +20,6 @@ public class PlayerMain {
 
         int tryAgain;
         do {
-//            reset clue so it doesn't keep appending each round
-//            there's gotta be a better way
-            clue.setLength(0);
             // constructors to call methods and pass in objects
             randPhrase(phrase1);
             cluePhrase(phrase1, clue);
@@ -47,6 +44,8 @@ public class PlayerMain {
     }
 
     public static void cluePhrase(StringBuilder phrase1, StringBuilder clue){
+//   reset clue so it doesn't keep appending each round, there's gotta be a better way
+        clue.setLength(0);
         int length = phrase1.length();
         for (int x = 0; x < length; x++) {
             if (phrase1.charAt(x) != ' ') {
