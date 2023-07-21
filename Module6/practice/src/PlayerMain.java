@@ -20,6 +20,8 @@ public class PlayerMain {
 
         int tryAgain;
         do {
+//            reset clue so it doesn't keep appending each round
+//            there's gotta be a better way
             clue.setLength(0);
             // constructors to call methods and pass in objects
             randPhrase(phrase1);
