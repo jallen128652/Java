@@ -39,11 +39,8 @@ public class PlayerMain {
         phrase[2] = "where do you want to eat";
         phrase[3] = "are we there yet";
         phrase[4] = "how are you doing";
-        // // using a rand to select, pass as a stringbuilder object to gamefx
-
-        phrase1.append(" " + phrase[rand]);
-
-
+        // using a rand to select, pass as a stringbuilder object to gamefx()
+        phrase1.append(phrase[rand]);
     }
 
     public static void cluePhrase(StringBuilder phrase1, StringBuilder clue){
@@ -62,8 +59,6 @@ public class PlayerMain {
     public static void gameFx(StringBuilder phrase1, Player player1, StringBuilder clue) {
         // store original phrase as a string
         String originalPhrase = phrase1.toString();
-        // declare var for the to pass into the Player class numberAttempts()
-        int numAttempts = 0;
         // must also be converted toString each round and stored in a separate var name
         // loop through the length and store the @ value in clue for ea char in phrase1
         do {
@@ -84,7 +79,7 @@ public class PlayerMain {
             int length = phrase1.length();
             if (attLength == length) {
 //                determines if the attempt is equal to the phrase
-                if (attempt.contentEquals(phrase1)) {
+                if (attempt.equalsIgnoreCase(phrase1.toString())) {
                     System.out.println("Congratulations, you win!");
                     break;
                 } else {
@@ -112,5 +107,7 @@ public class PlayerMain {
 
         } while (!phrase1.toString().contentEquals(clue));
         player1.display();
+        clue.setLength(0);
+
     }
 }

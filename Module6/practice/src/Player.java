@@ -10,9 +10,8 @@ public class Player {
         return name;
     }
 
-    public int numberAttempts() {
+    public void numberAttempts() {
         numAttempts++;
-        return numAttempts;
     }
 
     public void display() {
