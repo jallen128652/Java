@@ -20,6 +20,7 @@ public class PlayerMain {
 
         int tryAgain;
         do {
+            clue.setLength(0);
             // constructors to call methods and pass in objects
             randPhrase(phrase1);
             cluePhrase(phrase1, clue);
@@ -107,7 +108,5 @@ public class PlayerMain {
 
         } while (!phrase1.toString().contentEquals(clue));
         player1.display();
-        clue.setLength(0);
-
     }
 }
