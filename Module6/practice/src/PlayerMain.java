@@ -1,11 +1,11 @@
 import java.util.Scanner;
-
 public class PlayerMain {
     public static void main(String[] args) {
         // create instance object of the player class
         Player player1 = new Player();
         // create class object for stringbuilder
         StringBuilder phrase1 = new StringBuilder();
+        StringBuilder clue = new StringBuilder();
         // declare vars
 
         // print welcome and prompt player
@@ -14,21 +14,23 @@ public class PlayerMain {
         Scanner input = new Scanner(System.in);
         String name = input.nextLine();
 
-        // pass name to player class to set
+//        constructor calls
         // note format classObject.classMethod();
         player1.setName(name);
 
         int tryAgain;
         do {
             // constructors to call methods and pass in objects
-            randPhrase(player1, phrase1);
+            randPhrase(phrase1);
+            cluePhrase(phrase1, clue);
+            gameFx(phrase1, player1, clue);
             System.out.println("Play another round?\nEnter 1 for yes and any other number to quit");
             tryAgain = input.nextInt();
         } while (tryAgain == 1);
     }
 
     // randPhraseFx: create functions for storing and calling phrases 5 phrases
-    public static void randPhrase(Player player1, StringBuilder phrase1) {
+    public static void randPhrase(StringBuilder phrase1) {
 
         int rand = (int) (Math.random() * 5);
         String[] phrase = new String[5];
@@ -40,61 +42,75 @@ public class PlayerMain {
         // // using a rand to select, pass as a stringbuilder object to gamefx
 
         phrase1.append(" " + phrase[rand]);
-        gameFx(phrase1, player1);
 
+
+    }
+
+    public static void cluePhrase(StringBuilder phrase1, StringBuilder clue){
+        int length = phrase1.length();
+        for (int x = 0; x < length; x++) {
+            if (phrase1.charAt(x) != ' ') {
+                clue.append('@');
+            } else {
+                clue.append(' ');
+            }
+        }
     }
 
     // gameFx: create function for comparing the stringbuilder, append, prompt,
     // search, append, tostring, compare, print, prompt again
-    public static void gameFx(StringBuilder phrase1, Player player1) {
+    public static void gameFx(StringBuilder phrase1, Player player1, StringBuilder clue) {
         // store original phrase as a string
         String originalPhrase = phrase1.toString();
-        // create clue objects
-        StringBuilder clue = new StringBuilder();
-        // declare obj to store string
-        String clueString;
         // declare var for the to pass into the Player class numberAttempts()
         int numAttempts = 0;
-        // must also be converted tostring each round and stored in a separate var name
+        // must also be converted toString each round and stored in a separate var name
         // loop through the length and store the @ value in clue for ea char in phrase1
         do {
-            int length = phrase1.length();
-            for (int x = 0; x < length; x++) {
-                if (phrase1.charAt(x) != ' ') {
-                    clue.append('@');
-                } else {
-                    clue.append(' ');
-                }
-            }
             // show clue
             System.out.println("Your clue is: " + clue);
             // prompt
             System.out.println("Please guess a letter and press enter or enter a complete guess of the phrase. ");
             // input
             Scanner input2 = new Scanner(System.in);
-            String attempt = input2.nextLine();
+//            stores input and converts to lowercase
+            String attempt = input2.nextLine().toLowerCase();
             // get input length to determine if it's a char or a complete guess
             int attLength = attempt.length();
             // call to number of attempts in player class, will increment the value
-            player1.numberAttempts(numAttempts);
+//            note calls to this method in the Player class don't need an arg ass it's just incrementing
+            player1.numberAttempts();
+//            compares length of attempt with length of phrase to see the type of attempt
+            int length = phrase1.length();
             if (attLength == length) {
-                if (originalPhrase.equals(attempt)) {
+//                determines if the attempt is equal to the phrase
+                if (attempt.contentEquals(phrase1)) {
                     System.out.println("Congratulations, you win!");
+                    break;
                 } else {
                     System.out.println("Incorrect, please continue");
                 }
-            }
-            for(int y = 0; y < length; y++){
-                if (originalPhrase.indexOf(attempt) != -1){
-                    clue.append(attempt);
-                } else {
-                    System.out.println("No matches for " + attempt);
+//                if the user enters just 1 char
+            } else if (attLength == 1) {
+                char letter = attempt.charAt(0);
+                boolean foundMatch = false;
+            for (int i = 0; i < length; i++) {
+                char c = originalPhrase.charAt(i);
+                if (c == letter) {
+                    clue.setCharAt(i, letter);
+                    foundMatch = true;
                 }
             }
-            // converts clue and updates the loop control
-            clueString = clue.toString();
+            if (foundMatch) {
+                System.out.println("Letter found! Keep going.");
+            } else {
+                System.out.println("No matches for " + letter);
+            }
+        } else {
+            System.out.println("Invalid input. Please enter a single letter or the complete phrase.");
+        }
 
-        } while (!originalPhrase.equals(clueString));
-        player1.display(clueString, numAttempts);
+        } while (!phrase1.toString().contentEquals(clue));
+        player1.display();
     }
 }

@@ -1,6 +1,6 @@
 public class Player {
     private String name;
-    private int numAttempts;
+    public int numAttempts;
 
     public void setName(String playerName) {
         name = playerName;
@@ -10,15 +10,13 @@ public class Player {
         return name;
     }
 
-    public int numberAttempts(int numAtt) {
-        numAtt = numAttempts;
-        numAtt++;
-        return numAtt;
+    public int numberAttempts() {
+        numAttempts++;
+        return numAttempts;
     }
 
-    public void display(String name, int numAtt) {
-        System.out.println("Player " + name + " completed the round in " + numAtt + " attempts!");
-        numAtt = 0;
+    public void display() {
+        System.out.println("Player " + name + " completed the round in " + numAttempts + " attempts!");
+        numAttempts = 0;
     }
-
 }
