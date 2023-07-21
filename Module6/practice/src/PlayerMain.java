@@ -3,7 +3,7 @@ public class PlayerMain {
     public static void main(String[] args) {
         // create instance object of the player class
         Player player1 = new Player();
-        // create class object for stringbuilder
+        // create class objects for stringbuilder
         StringBuilder phrase1 = new StringBuilder();
         StringBuilder clue = new StringBuilder();
         // declare vars
@@ -31,27 +31,35 @@ public class PlayerMain {
 
     // randPhraseFx: create functions for storing and calling phrases 5 phrases
     public static void randPhrase(StringBuilder phrase1) {
-
+//        reset phase1 each round
+        phrase1.setLength(0);
+//        generate rand
         int rand = (int) (Math.random() * 5);
+//        declare and initialize the String array
         String[] phrase = new String[5];
         phrase[0] = "welcome to the thunderdome";
         phrase[1] = "have a nice day";
         phrase[2] = "where do you want to eat";
         phrase[3] = "are we there yet";
         phrase[4] = "how are you doing";
-        // using a rand to select, pass as a stringbuilder object to gamefx()
-        phrase1.append(phrase[rand]);
+//        stores the phrase in the stringbuilder phrase1
+        phrase1.replace(0, phrase.length - 1, phrase[rand]);
     }
 
     public static void cluePhrase(StringBuilder phrase1, StringBuilder clue){
-//   reset clue so it doesn't keep appending each round, there's gotta be a better way
+//   reset clue each round
         clue.setLength(0);
+//        get length of the phrase
         int length = phrase1.length();
+//        loop length times
         for (int x = 0; x < length; x++) {
+//            store characters in clue
+//            note I chose replace instead of append because I was having issues after each round clearing clue
+//            likely wasn't clue but phrase1 though.
             if (phrase1.charAt(x) != ' ') {
-                clue.append('@');
+                clue.replace(x, x,"@");
             } else {
-                clue.append(' ');
+                clue.replace(x, x," ");
             }
         }
     }
@@ -90,15 +98,17 @@ public class PlayerMain {
 //                if the user enters just 1 char
             } else if (attLength == 1) {
                 char letter = attempt.charAt(0);
-                boolean foundMatch = false;
+                boolean match = false;
+//                loop through to determine if the chars match
             for (int i = 0; i < length; i++) {
                 char c = originalPhrase.charAt(i);
                 if (c == letter) {
+//                    replace @ with letter
                     clue.setCharAt(i, letter);
-                    foundMatch = true;
+                    match = true;
                 }
             }
-            if (foundMatch) {
+            if (match) {
                 System.out.println("Letter found! Keep going.");
             } else {
                 System.out.println("No matches for " + letter);
@@ -108,6 +118,7 @@ public class PlayerMain {
         }
 
         } while (!phrase1.toString().contentEquals(clue));
+//        call display() in the Player class, note format obj.fx() with no arg as they're all handled in Player class
         player1.display();
     }
 }
