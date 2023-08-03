@@ -4,7 +4,6 @@ public class BowlingTeamDemo2 {
         String name;
         final int NUM_TEAMS = 4;
         BowlingTeam[] teams = new BowlingTeam[NUM_TEAMS];
-        BowlingTeam bowlTeam = new BowlingTeam();
         int x;
         int y;
         final int NUM_TEAM_MEMBERS = 4;
