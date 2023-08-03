@@ -10,11 +10,11 @@ public class BowlingTeamDemo2 {
         Scanner input = new Scanner(System.in);
         for (y = 0; y < NUM_TEAMS; ++y) {
             teams[y] = new BowlingTeam();
-            System.out.println("Enter team name: ");
+            System.out.print("Enter team name: ");
             name = input.nextLine();
             teams[y].setTeamName(name);
             for (x = 0; x < NUM_TEAM_MEMBERS; ++x) {
-                System.out.println("Enter team member's name: ");
+                System.out.print("Enter team member's name: ");
                 name = input.nextLine();
                 teams[y].setMembers(x, name);
             }
@@ -23,7 +23,7 @@ public class BowlingTeamDemo2 {
         for (y = 0; y < NUM_TEAMS; ++y) {
             System.out.println("\nMembers of team " + teams[y].getTeamName());
             for (x = 0; x < NUM_TEAM_MEMBERS; ++x) {
-                System.out.println(teams[y].getMembers(x) + " ");
+                System.out.print(teams[y].getMembers(x) + " ");
             }
         }
     }
