@@ -11,6 +11,7 @@ public class BubbleSort {
             System.out.print(nums[x] + " ");
         }
         System.out.println();
+        int compares = nums.length -1;
         for (x = 0; x < nums.length - 1; ++x){
             for(y = 0; y < nums.length - 1; ++y){
                 if(nums[y] > nums[y + 1]){
@@ -19,6 +20,7 @@ public class BubbleSort {
                     nums[y + 1] = temp;
                 }
             }
+            --compares;
         }
         System.out.print("The array after bubble sorting: ");
         for(x = 0; x < nums.length; ++x){
