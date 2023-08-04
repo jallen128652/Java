@@ -1,4 +1,3 @@
-import java.util.*;
 public class BubbleSort {
     public static void main(String[] args) {
         int[] nums = {98, 36, 44, 76, 23};
@@ -13,7 +12,7 @@ public class BubbleSort {
         System.out.println();
         int compares = nums.length -1;
         for (x = 0; x < nums.length - 1; ++x){
-            for(y = 0; y < nums.length - 1; ++y){
+            for(y = 0; y < compares; ++y){
                 if(nums[y] > nums[y + 1]){
                     temp = nums[y];
                     nums[y] = nums[y + 1];
