@@ -3,7 +3,6 @@ public class InsertionSortDemo {
     public static void main(String[] args){
 //        declarations
         int[] someNums = new int[5];
-
         Scanner keyboard = new Scanner(System.in);
         int a, b, temp;
         for(a = 0; a < someNums.length; ++a){
