@@ -91,24 +91,26 @@ public class OrdersMain {
 //      use a range match
         final int NUM_RANGES = 5;
         double[] range = {9, 25, 49, 100, 5000};
-        int sub = NUM_RANGES - 1;
+        int sub1 = NUM_RANGES - 1;
+        int sub2 = NUM_RANGES - 1;
+        int sub3 = NUM_RANGES - 1;
         if(hat1QTY > 0) {
-            while (sub >= 0 && hat1QTY < range[sub]){
-                --sub;
+            while (sub1 >= 0 && hat1QTY < range[sub1]){
+                --sub1;
             }
-            priceEa1 = hats[0][sub];
+            priceEa1 = hats[0][sub1];
         }
         if(hat2QTY > 0) {
-            while (sub >= 0 && hat2QTY < range[sub]){
-                --sub;
+            while (sub2 >= 0 && hat2QTY < range[sub2]){
+                --sub2;
             }
-            priceEa2 = hats[1][sub];
+            priceEa2 = hats[1][sub2];
         }
         if(hat3QTY > 0) {
-            while (sub >= 0 && hat3QTY < range[sub]){
-                --sub;
+            while (sub3 >= 0 && hat3QTY < range[sub3]){
+                --sub3;
             }
-            priceEa3 = hats[2][sub];
+            priceEa3 = hats[2][sub3];
         }
         System.out.println(hat1QTY + " " + priceEa1);
         System.out.println(hat2QTY + " " + priceEa2);
