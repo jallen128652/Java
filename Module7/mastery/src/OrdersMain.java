@@ -16,7 +16,7 @@ public class OrdersMain {
                    orders();
                    break;
                case 2:
-                   totals();
+                   salesTotals();
                    break;
                case 3:
                    System.out.println("Exiting now.");
@@ -39,43 +39,62 @@ public class OrdersMain {
 // order fx
     public static void orders(){
         Orders customer = new Orders();
-        int hatType, qty;
+        int hatType = 0, qty;
         double[][] hats = {{4.00, 3.75, 3.50, 3.25, 3.00},
                 {4.50, 4.25, 4.00, 3.75, 3.50},
                 {5.00, 4.75, 4.50, 4.25, 4.00}};
 
-        System.out.println("Hat Prices");
-        System.out.println("Price by qty/type <10 | 10-25 | 26-49 | 49-100 | >100");
+        System.out.println("Hat Prices\n");
+        System.out.println("Price by qty/type    <10    |  10-25  |  26-49  |  49-100  | >100");
         Scanner input = new Scanner(System.in);
         for(int a = 0; a < hats.length; ++a){
             if(a == 0){
-                System.out.print("Kid's Ball Caps: ");
+                System.out.print("Kid's Ball Caps:\t ");
             }else if(a == 1){
-                System.out.print("Woman's Sun Hats: ");
+                System.out.print("Woman's Sun Hats:\t ");
             }else if(a == 2){
-                System.out.print("Men's Trucker Hats: ");
+                System.out.print("Men's Trucker Hats:\t ");
             }
             for(int b = 0; b < hats[a].length; ++b){
-                System.out.println(hats[a][b] + " ");
+                System.out.print("$" + String.format("%.2f", hats[a][b]) + "     ");
             }
+            System.out.println();
         }
         do {
-            System.out.println("1. Order Kid's Ball Caps.");
+            System.out.println("\n1. Order Kid's Ball Caps.");
             System.out.println("2. Order Woman's Sun Hats.");
             System.out.println("3. Order Men's Trucker Hats.");
-            System.out.println("4. Main Menu.");
+            System.out.println("4. Complete the order.");
             System.out.println("Please choose an option: ");
             hatType = input.nextInt();
-            customer.setHatType(hatType);
-            System.out.println("Please choose a quantity:");
-            qty = input.nextInt();
-            customer.setQty(qty);
+//            if statements for type to setters
+            if(hatType == 1) {
+                customer.setHatType(hatType);
+                System.out.println("Please choose a quantity: ");
+                qty = input.nextInt();
+                customer.setQty(qty);
+            }else if(hatType == 2){
+                customer.setHatType2(hatType);
+                System.out.println("Please choose a quantity: ");
+                qty = input.nextInt();
+                customer.setQty2(qty);
+            }else if(hatType == 3){
+                customer.setHatType3(hatType);
+                System.out.println("Please choose a quantity: ");
+                qty = input.nextInt();
+                customer.setQty3(qty);
+            }
         }while(hatType != 4);
+//        use the getters to get qty by type and complete the receipt
     }
+
 // sales total arraylist fx
+    public static void salesTotals(){
+
+    }
 
 }
-
+//pseudocode for planning
 //hats
 //kids ball caps
 //womens sun caps
