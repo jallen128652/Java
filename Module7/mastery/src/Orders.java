@@ -1,30 +1,9 @@
 import java.util.*;
 public class Orders {
-    private int hatType;
-    private int qty;
-//    set and get for items and qty's
-    public void setHatType(int hat){
-        int count1 = 0;
-        hatType = hat;
-        count1++;
-    }
-    public int getHatType(int count1){
-        return count1;
-    }
-    public void setHatType2(int hat){
-        int count2 = 0;
-        hatType = hat;
-        count2++;
 
-    }
-    public int getHatType2(int count2){
-        return count2;
-    }
-    public void setHatType3(int hat){
-        int count3 = 0;
-        hatType = hat;
-        count3++;
-    }
+    private int qty, qty2, qty3;
+//    set and get for items and qty's
+
     public int getHatType3(int count3){
         return count3;
     }
@@ -35,16 +14,18 @@ public class Orders {
         return qty;
     }
     public void setQty2(int qty){
-        this.qty = qty;
+        this.qty2 = qty;
     }
     public int getQty2(){
-        return qty;
+        return qty2;
     }
     public void setQty3(int qty){
-        this.qty = qty;
+        this.qty3 = qty;
     }
     public int getQty3(){
-        return qty;
+        return qty3;
     }
+
+
 //    totals function
 }

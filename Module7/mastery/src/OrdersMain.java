@@ -10,7 +10,6 @@ public class OrdersMain {
         do{
            menu();
            choice = input.nextInt();
-
            switch(choice){
                case 1:
                    orders();
@@ -67,28 +66,57 @@ public class OrdersMain {
             System.out.println("4. Complete the order.");
             System.out.println("Please choose an option: ");
             hatType = input.nextInt();
-//            if statements for type to setters
+//            if statements for type/qty to setters
             if(hatType == 1) {
-                customer.setHatType(hatType);
                 System.out.println("Please choose a quantity: ");
                 qty = input.nextInt();
                 customer.setQty(qty);
             }else if(hatType == 2){
-                customer.setHatType2(hatType);
                 System.out.println("Please choose a quantity: ");
                 qty = input.nextInt();
                 customer.setQty2(qty);
             }else if(hatType == 3){
-                customer.setHatType3(hatType);
                 System.out.println("Please choose a quantity: ");
                 qty = input.nextInt();
                 customer.setQty3(qty);
             }
         }while(hatType != 4);
-//        use the getters to get qty by type and complete the receipt
-//        loop through the hats to determine the price per
+        int hat1QTY = 0, hat2QTY = 0, hat3QTY = 0;
+        double priceEa1 = 0, priceEa2 = 0, priceEa3 = 0;
+        int rng1 = 0, rng2 = 0, rng3 = 0;
+        hat1QTY = customer.getQty();
+        hat2QTY = customer.getQty2();
+        hat3QTY = customer.getQty3();
+//     check the ranges and getting the priceEa
+//      use a range match
+        final int NUM_RANGES = 5;
+        double[] range = {9, 25, 49, 100, 5000};
+        int sub = NUM_RANGES - 1;
+        if(hat1QTY > 0) {
+            while (sub >= 0 && hat1QTY < range[sub]){
+                --sub;
+            }
+            priceEa1 = hats[0][sub];
+        }
+        if(hat2QTY > 0) {
+            while (sub >= 0 && hat2QTY < range[sub]){
+                --sub;
+            }
+            priceEa2 = hats[1][sub];
+        }
+        if(hat3QTY > 0) {
+            while (sub >= 0 && hat3QTY < range[sub]){
+                --sub;
+            }
+            priceEa3 = hats[2][sub];
+        }
+        System.out.println(hat1QTY + " " + priceEa1);
+        System.out.println(hat2QTY + " " + priceEa2);
+        System.out.println(hat3QTY + " " + priceEa3);
+
 //        calc subtotal
     }
+
 
 // sales total arraylist fx
     public static void salesTotals(){
@@ -110,7 +138,7 @@ public class OrdersMain {
 //add a menu for the order page where they can choose hat type and quantity function
 //need a receipt display function
 
-//subtotal = qty * type
+//subtotal = qtyType * price
 //tax = subtotal * rate not charged against shipping cost
 //shipping determined by subtotal tax not accounted for just subtotal
 //total = subtotal + tax + shipping
