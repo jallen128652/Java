@@ -86,6 +86,8 @@ public class OrdersMain {
             }
         }while(hatType != 4);
 //        use the getters to get qty by type and complete the receipt
+//        loop through the hats to determine the price per
+//        calc subtotal
     }
 
 // sales total arraylist fx
