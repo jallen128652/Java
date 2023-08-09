@@ -45,7 +45,7 @@ public class OrdersMain {
     public static void orders(ArrayList<Orders> orders){
 //        creates a customer object to be used in this fx and so each for current order only
         Orders customer = new Orders();
-        int hatType = 0, qty;
+        int hatType = 0, qty1, qty2, qty3;
         double subTotal, tax = 0.0825, subT1, subT2, subT3;
         double shipping = 0, total, taxes;
         double[][] hats = {{4.00, 3.75, 3.50, 3.25, 3.00},
@@ -78,17 +78,17 @@ public class OrdersMain {
 //            if statements for type/qty to setters
             if(hatType == 1) {
                 System.out.println("Please choose a quantity: ");
-                qty = input.nextInt();
+                qty1 = input.nextInt();
 //                stores the qty in the current customer obj
-                customer.setQty(qty);
+                customer.setQty(qty1);
             }else if(hatType == 2){
                 System.out.println("Please choose a quantity: ");
-                qty = input.nextInt();
-                customer.setQty2(qty);
+                qty2 = input.nextInt();
+                customer.setQty2(qty2);
             }else if(hatType == 3){
                 System.out.println("Please choose a quantity: ");
-                qty = input.nextInt();
-                customer.setQty3(qty);
+                qty3 = input.nextInt();
+                customer.setQty3(qty3);
             }
         }while(hatType != 4);
         int hat1QTY = 0, hat2QTY = 0, hat3QTY = 0;
@@ -149,13 +149,8 @@ public class OrdersMain {
         System.out.println("Shipping:\t\t\t$ " + String.format("%.2f",shipping));
         System.out.println("Total Due:\t\t\t$ " + String.format("%.2f",total));
         System.out.println("\n\n");
-//        create objects to store in the array list
-        Orders daily = new Orders();
-        daily.setQty(hat1QTY);
-        daily.setQty2(hat2QTY);
-        daily.setQty3(hat3QTY);
-        daily.setTotal(total);
-        orders.add(daily);
+//      add to the arraylist
+        orders.add(customer);
     }
 // sales total arraylist fx
     public static void salesTotals(ArrayList<Orders> orders){
@@ -168,11 +163,11 @@ public class OrdersMain {
         int hat1 = 0, hat2 = 0, hat3 = 0;
         double totals = 0;
 //        for loop totals up the values
-        for(Orders daily : orders){
-            hat1 += daily.getQty();
-            hat2 += daily.getQty2();
-            hat3 += daily.getQty3();
-            totals += daily.getTotal();
+        for(Orders customer : orders){
+            hat1 += customer.getQty();
+            hat2 += customer.getQty2();
+            hat3 += customer.getQty3();
+            totals += customer.getTotal();
         }
 //        print daily report
         System.out.println("Total Sales for Today\n");
@@ -180,6 +175,7 @@ public class OrdersMain {
         System.out.println("Woman's Sun Hats:      " + hat2);
         System.out.println("Men's Trucker Hats:    " + hat3);
         System.out.println("Total Amount of Sales: $" + String.format("%.2f", totals));
+        System.out.println("\n\n");
     }
 }
 //pseudocode for planning
