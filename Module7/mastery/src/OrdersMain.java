@@ -5,11 +5,16 @@ public class OrdersMain {
 //        call fx for print menu inside do while loop first
 //        input next
 //        switch case for choice which calls fx's inside a do while loop
+//        declare obj's
         ArrayList<Orders> orders = new ArrayList<>();
         Scanner input = new Scanner(System.in);
+//        main menu
+//        uses switch case to call fx's
         int choice;
         do{
+//            calls the menu fx
            menu();
+//           takes selection and calls the other class fx's
            choice = input.nextInt();
            switch(choice){
                case 1:
@@ -151,8 +156,6 @@ public class OrdersMain {
         order.setTotal(total);
         orders.add(order);
     }
-
-
 // sales total arraylist fx
     public static void salesTotals(ArrayList<Orders> orders){
 //        all 4 getters
@@ -172,7 +175,6 @@ public class OrdersMain {
         System.out.println("Men's Trucker Hats:    " + hat3);
         System.out.println("Total Amount of Sales: $" + String.format("%.2f", totals));
     }
-
 }
 //pseudocode for planning
 //hats
