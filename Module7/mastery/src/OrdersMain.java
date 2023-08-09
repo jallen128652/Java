@@ -43,6 +43,7 @@ public class OrdersMain {
     }
 // order fx
     public static void orders(ArrayList<Orders> orders){
+//        creates a customer object to be used in this fx and so each for current order only
         Orders customer = new Orders();
         int hatType = 0, qty;
         double subTotal, tax = 0.0825, subT1, subT2, subT3;
@@ -78,6 +79,7 @@ public class OrdersMain {
             if(hatType == 1) {
                 System.out.println("Please choose a quantity: ");
                 qty = input.nextInt();
+//                stores the qty in the current customer obj
                 customer.setQty(qty);
             }else if(hatType == 2){
                 System.out.println("Please choose a quantity: ");
@@ -91,7 +93,6 @@ public class OrdersMain {
         }while(hatType != 4);
         int hat1QTY = 0, hat2QTY = 0, hat3QTY = 0;
         double priceEa1 = 0, priceEa2 = 0, priceEa3 = 0;
-        int rng1 = 0, rng2 = 0, rng3 = 0;
         hat1QTY = customer.getQty();
         hat2QTY = customer.getQty2();
         hat3QTY = customer.getQty3();
@@ -159,16 +160,18 @@ public class OrdersMain {
 // sales total arraylist fx
     public static void salesTotals(ArrayList<Orders> orders){
 //        all 4 getters
-//        store in arraylist by customer object
 //        when fx is called print qty by type and total sales amt
+//        declare local vars to store getter values
         int hat1 = 0, hat2 = 0, hat3 = 0;
         double totals = 0;
+//        for loop totals up the values
         for(Orders order : orders){
             hat1 += order.getQty();
             hat2 += order.getQty2();
             hat3 += order.getQty3();
             totals += order.getTotal();
         }
+//        print daily report
         System.out.println("Total Sales for Today\n");
         System.out.println("Kid's Ball Caps:       " + hat1);
         System.out.println("Woman's Sun Hats:      " + hat2);
