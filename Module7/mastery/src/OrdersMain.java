@@ -170,6 +170,7 @@ public class OrdersMain {
         double totals = 0;
 //        for loop totals up the values in the array list by customer objects
         for(Orders customer : orders){
+//            adds each customer obj in the array list
             hat1 += customer.getQty();
             hat2 += customer.getQty2();
             hat3 += customer.getQty3();
