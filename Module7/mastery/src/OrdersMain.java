@@ -150,26 +150,29 @@ public class OrdersMain {
         System.out.println("Total Due:\t\t\t$ " + String.format("%.2f",total));
         System.out.println("\n\n");
 //        create objects to store in the array list
-        Orders order = new Orders();
-        order.setQty(hat1QTY);
-        order.setQty2(hat2QTY);
-        order.setQty3(hat3QTY);
-        order.setTotal(total);
-        orders.add(order);
+        Orders daily = new Orders();
+        daily.setQty(hat1QTY);
+        daily.setQty2(hat2QTY);
+        daily.setQty3(hat3QTY);
+        daily.setTotal(total);
+        orders.add(daily);
     }
 // sales total arraylist fx
     public static void salesTotals(ArrayList<Orders> orders){
 //        all 4 getters
 //        when fx is called print qty by type and total sales amt
 //        declare local vars to store getter values
+//        ***need to separate the setters and getters by customer obj and daily obj
+//        in the Orders class*** fix tomorrow!!!
+//        need to test the arraylist by itself as well
         int hat1 = 0, hat2 = 0, hat3 = 0;
         double totals = 0;
 //        for loop totals up the values
-        for(Orders order : orders){
-            hat1 += order.getQty();
-            hat2 += order.getQty2();
-            hat3 += order.getQty3();
-            totals += order.getTotal();
+        for(Orders daily : orders){
+            hat1 += daily.getQty();
+            hat2 += daily.getQty2();
+            hat3 += daily.getQty3();
+            totals += daily.getTotal();
         }
 //        print daily report
         System.out.println("Total Sales for Today\n");
@@ -184,9 +187,9 @@ public class OrdersMain {
 //kids ball caps
 //womens sun caps
 //mens trucker hats
-//if order < 10.00 shipping 8.00
-//if order >= 10.00 && < 25.00 shipping 15.00
-//if order >= 25.00 && < 50.00 shipping 22.00
+//if order < 10.00 shipping 5.99
+//if order >= 10.00 && < 25.00 shipping 9.99
+//if order >= 25.00 && < 50.00 shipping 15.99
 //if order >= 50.00 shipping 0.00
 //main menu choose action order, total, exit function
 //need nested for loops to display pricing menu in the order option
@@ -198,4 +201,4 @@ public class OrdersMain {
 //shipping determined by subtotal tax not accounted for just subtotal
 //total = subtotal + tax + shipping
 
-//main will store an arraylist of all orders objects
+//main will store an arraylist of all daily orders objects
