@@ -33,7 +33,8 @@ public class OrdersMain {
         }while(choice != 3);
 
     }
-// menu fx
+//      menu fx
+//      basic print job
     public static void menu(){
         System.out.println("Welcome to Party Hats!");
         System.out.println("Hat order menu:");
@@ -42,9 +43,9 @@ public class OrdersMain {
         System.out.println("3. Exit.");
         System.out.println("Choose an option: ");
     }
-// order fx
+//      order fx
     public static void orders(ArrayList<Orders> orders){
-//        creates a customer object to be used in this fx and so each for current order only
+//        creates a customer object to be used in this fx for current order
         Orders customer = new Orders();
         int hatType, qty1, qty2, qty3;
         double subTotal, tax = 0.0825, subT1, subT2, subT3;
