@@ -7,7 +7,8 @@ public class Orders {
 //    set and get for items qty's and totals
 
     public void setQty(int qty1){
-//        adds up qty in case someone orders the same type more than once per order
+//        adds up qty in case someone orders the same type more than
+//        once per order
         this.qty1 += qty1;
     }
     public int getQty(){
