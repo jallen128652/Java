@@ -18,6 +18,7 @@ public class OrdersMain {
            choice = input.nextInt();
            switch(choice){
                case 1:
+//                   note passes the arraylist as arg
                    orders(orders);
                    break;
                case 2:
@@ -45,7 +46,7 @@ public class OrdersMain {
     public static void orders(ArrayList<Orders> orders){
 //        creates a customer object to be used in this fx and so each for current order only
         Orders customer = new Orders();
-        int hatType = 0, qty1, qty2, qty3;
+        int hatType, qty1, qty2, qty3;
         double subTotal, tax = 0.0825, subT1, subT2, subT3;
         double shipping = 0, total, taxes;
         double[][] hats = {{4.00, 3.75, 3.50, 3.25, 3.00},
@@ -55,6 +56,7 @@ public class OrdersMain {
         System.out.println("Hat Prices\n");
         System.out.println("Price by qty/type    <10    |  10-25  |  26-49  |  50-100  | >100");
         Scanner input = new Scanner(System.in);
+//        loops through rows to print out prices by quantity
         for(int a = 0; a < hats.length; ++a){
             if(a == 0){
                 System.out.print("Kid's Ball Caps:\t ");
@@ -63,6 +65,7 @@ public class OrdersMain {
             }else if(a == 2){
                 System.out.print("Men's Trucker Hats:\t ");
             }
+//            loops through quantity price columns **nested inner**
             for(int b = 0; b < hats[a].length; ++b){
                 System.out.print("$" + String.format("%.2f", hats[a][b]) + "     ");
             }
@@ -93,11 +96,13 @@ public class OrdersMain {
         }while(hatType != 4);
         int hat1QTY = 0, hat2QTY = 0, hat3QTY = 0;
         double priceEa1 = 0, priceEa2 = 0, priceEa3 = 0;
+//        set qty's in Orders class
+//        note object.classFx()
         hat1QTY = customer.getQty();
         hat2QTY = customer.getQty2();
         hat3QTY = customer.getQty3();
 //     check the ranges and getting the priceEa
-//      use a range match
+//      use a range match to search qty price columns from parallel arrays
         final int NUM_RANGES = 5;
         double[] range = {1, 10, 26, 50, 101};
         int sub1 = NUM_RANGES - 1;
@@ -121,6 +126,7 @@ public class OrdersMain {
             }
             priceEa3 = hats[2][sub3];
         }
+//        run calcs
         subT1 = priceEa1 * hat1QTY;
         subT2 = priceEa2 * hat2QTY;
         subT3 = priceEa3 * hat3QTY;
@@ -136,7 +142,9 @@ public class OrdersMain {
             shipping = 0;
         }
         total = subTotal + taxes + shipping;
+//        store total
         customer.setTotal(total);
+//        print receipt
         System.out.println("Party Hats Sales Receipt\n");
         System.out.println(hat1QTY + " Kid's Ball Caps \t\t\t@ " + priceEa1 + " each: $ " +
                 String.format("%.2f",subT1));
@@ -157,12 +165,9 @@ public class OrdersMain {
 //        all 4 getters
 //        when fx is called print qty by type and total sales amt
 //        declare local vars to store getter values
-//        ***need to separate the setters and getters by customer obj and daily obj
-//        in the Orders class*** fix tomorrow!!!
-//        need to test the arraylist by itself as well
         int hat1 = 0, hat2 = 0, hat3 = 0;
         double totals = 0;
-//        for loop totals up the values
+//        for loop totals up the values in the array list by customer objects
         for(Orders customer : orders){
             hat1 += customer.getQty();
             hat2 += customer.getQty2();
