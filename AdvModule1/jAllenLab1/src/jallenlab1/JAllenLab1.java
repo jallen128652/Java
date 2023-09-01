@@ -17,6 +17,7 @@ public class JAllenLab1 {
        //testing new ide environment with jdk 17 
        System.out.println("Hello, World!");
        System.out.println("Common Github!");
+       System.out.println("Hello, World!");
     }
     
 }
