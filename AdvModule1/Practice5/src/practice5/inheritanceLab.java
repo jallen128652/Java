@@ -19,9 +19,11 @@ public class inheritanceLab {
     public static void main(String[] args) {
         // TODO code application logic here
         Student student = new Student();
+//        initializing variables of the superclass with the subclass obj(inheritance)
         student.name = "Fred";
+//        initializing variables of the subclass with the subclass obj(normal operation)
         student.idNumber = 1;
-//        calls the superclass method using the subclass instantiated obj
+//        calls the superclass method using the subclass instantiated obj(inheritance)
         student.purchaseParkingPass();
     }
     
