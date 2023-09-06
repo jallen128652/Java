@@ -9,7 +9,6 @@ package PunchingParrotTravelAgency;
  * @author druid
  */
 public class Hotel extends Lodging{
-    double basePricePerNight;
     int numberBeds;
     boolean hasFreeBreakfast;
     boolean valetParking;
@@ -17,4 +16,5 @@ public class Hotel extends Lodging{
     int vacancies;
     boolean hasPool;
     boolean hasGym;
+    boolean laundryOnSite;
 }

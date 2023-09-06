@@ -12,6 +12,5 @@ public class OrderDetails extends Customer {
     String roomNumber;
     double balanceOwed;
     double totalSpending;
-    double parkingFee;
-    
+    double parkingFee;    
 }

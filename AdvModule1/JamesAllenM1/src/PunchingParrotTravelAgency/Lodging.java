@@ -8,7 +8,7 @@ package PunchingParrotTravelAgency;
  *
  * @author druid
  */
-public class Lodging {
+public class Lodging extends Customer{
     String date;
     int lodgingType;
     double basePricePerNight;
