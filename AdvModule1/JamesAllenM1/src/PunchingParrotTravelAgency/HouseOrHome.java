@@ -9,5 +9,8 @@ package PunchingParrotTravelAgency;
  * @author druid
  */
 public class HouseOrHome extends Lodging{
+    int numberBedrooms;
+    boolean jacuziOrPool;
+    boolean laundryOnSite;
     
 }

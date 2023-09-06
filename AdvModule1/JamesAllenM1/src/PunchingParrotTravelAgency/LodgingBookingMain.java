@@ -14,14 +14,18 @@ public class LodgingBookingMain {
 //    main
     public static void main(String[] args){
 //        local vars
-        String name;
+        String firstName;
+        String lastName;
 //        employee object reference
         TravelAgencyEmployee employee = new TravelAgencyEmployee();
 //        input obj reference
         Scanner input = new Scanner(System.in);
-        System.out.println("Enter employee name: ");
-        name = input.nextLine();
-        employee.setName(name);        
+        System.out.println("Enter employee first name: ");
+        firstName = input.nextLine();
+        employee.setFirstName(firstName); 
+        System.out.println("Enter employee last name: ");
+        lastName = input.nextLine();
+        employee.setFirstName(lastName);
     }
     
 }
