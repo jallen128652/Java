@@ -15,6 +15,7 @@ public class LodgingBookingMain {
     public static void main(String[] args){
 //        local vars
         String name;
+//        employee object reference
         TravelAgencyEmployee employee = new TravelAgencyEmployee();
 //        input obj reference
         Scanner input = new Scanner(System.in);
