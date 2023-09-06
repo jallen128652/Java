@@ -8,6 +8,8 @@ package PunchingParrotTravelAgency;
  *
  * @author druid
  */
+import java.util.*;
+
 public class LodgingBookingMain {
 //    main
     public static void main(String[] args){
