@@ -8,6 +8,7 @@ package PunchingParrotTravelAgency;
  * @author druid
  */
 public class TravelAgencyEmployee extends Person{
+//    needs to inherit name from person class
     private int empId;
     private String hireDate;
     private String salary;
