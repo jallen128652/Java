@@ -10,4 +10,6 @@ package PunchingParrotTravelAgency;
  */
 public class Person {
     
+    String name;
+    
 }

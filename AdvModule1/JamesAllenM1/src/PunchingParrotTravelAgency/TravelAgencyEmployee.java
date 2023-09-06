@@ -7,11 +7,11 @@ package PunchingParrotTravelAgency;
  *
  * @author druid
  */
-public class TravelAgencyEmployee {
+public class TravelAgencyEmployee extends Person{
     private int empId;
-    private String empName;
     private String hireDate;
     private String salary;
+    public boolean isManager;
 
     public int getEmpId() {
         return empId;
@@ -20,14 +20,6 @@ public class TravelAgencyEmployee {
     public void setEmpId(int empId) {
         this.empId = empId;
     }  
-
-    public String getEmpName() {
-        return empName;
-    }
-
-    public void setEmpName(String empName) {
-        this.empName = empName;
-    }
 
     public String getHireDate() {
         return hireDate;
