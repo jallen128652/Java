@@ -16,16 +16,32 @@ public class LodgingBookingMain {
 //        local vars
         String firstName;
         String lastName;
+        int empOrCust;
+ //        input obj reference
+        Scanner input = new Scanner(System.in);
+//        choose person type
+        System.out.println("Enter 1 for employee or 2 for customer >> ");
+        empOrCust = input.nextInt();
+        input.nextLine();
+//        ***************add a while loop for invalid entry****************
+        if(empOrCust == 1){        
 //        employee object reference
         TravelAgencyEmployee employee = new TravelAgencyEmployee();
-//        input obj reference
-        Scanner input = new Scanner(System.in);
+
         System.out.println("Enter employee first name: ");
         firstName = input.nextLine();
         employee.setFirstName(firstName); 
         System.out.println("Enter employee last name: ");
         lastName = input.nextLine();
-        employee.setFirstName(lastName);
+        employee.setLastName(lastName);
+//        call to display
+        employee.display();
+        }else if(empOrCust == 2){
+            Customer customer = new Customer();
+        }else{
+            System.out.println("Invalid entry");
+            
+        }
     }
     
 }
