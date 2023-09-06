@@ -9,5 +9,6 @@ package PunchingParrotTravelAgency;
  * @author druid
  */
 public class Lodging {
+    String date;
     
 }

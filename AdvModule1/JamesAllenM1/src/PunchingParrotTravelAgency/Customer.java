@@ -9,5 +9,10 @@ package PunchingParrotTravelAgency;
  * @author druid
  */
 public class Customer extends Person {
+    private String loginName;
+    private String password;
+    private String address;
+    private String phoneNumber;
+    
     
 }

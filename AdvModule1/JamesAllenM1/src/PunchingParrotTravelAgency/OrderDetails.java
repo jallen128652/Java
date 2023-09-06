@@ -8,6 +8,10 @@ package PunchingParrotTravelAgency;
  *
  * @author druid
  */
-public class OrderDetails {
+public class OrderDetails extends Customer {
+    String roomNumber;
+    double balanceOwed;
+    double totalSpending;
+    double parkingFee;
     
 }
