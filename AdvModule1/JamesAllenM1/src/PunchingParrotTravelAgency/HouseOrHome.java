@@ -11,6 +11,5 @@ package PunchingParrotTravelAgency;
 public class HouseOrHome extends Lodging{
     int numberBedrooms;
     boolean jacuziOrPool;
-    boolean laundryOnSite;
-    
+    boolean laundryOnSite;    
 }

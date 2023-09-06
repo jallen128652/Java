@@ -8,7 +8,8 @@ package PunchingParrotTravelAgency;
  *
  * @author druid
  */
-public class HotelRoom extends Hotel{
-    int numberBeds;
-    double basePricePerNight;
+public class HotelRoom{
+    String checkIn;
+    String checkOut;
+    String wifiPw;    
 }

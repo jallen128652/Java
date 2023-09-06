@@ -8,7 +8,7 @@ package PunchingParrotTravelAgency;
  *
  * @author druid
  */
-public class LodgingReview extends Lodging{
+public class LodgingReview{
 //    1-5
     int rating;
     String comments;

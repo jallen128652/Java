@@ -10,5 +10,6 @@ package PunchingParrotTravelAgency;
  */
 public class Lodging {
     String date;
+    int lodgingType;
     double basePricePerNight;
 }
