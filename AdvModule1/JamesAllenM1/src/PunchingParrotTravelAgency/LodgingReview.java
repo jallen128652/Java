@@ -8,6 +8,6 @@ package PunchingParrotTravelAgency;
  *
  * @author druid
  */
-public class LodgingReview {
+public class LodgingReview extends Lodging{
     
 }
