@@ -8,6 +8,6 @@ package PunchingParrotTravelAgency;
  *
  * @author druid
  */
-public class Customer {
+public class Customer extends Person {
     
 }
