@@ -13,6 +13,7 @@ public class TravelAgencyEmployee extends Person{
     private String hireDate;
     private String salary;
     public boolean isManager;
+//    using the fancy new insert code tool 
 
     public int getEmpId() {
         return empId;

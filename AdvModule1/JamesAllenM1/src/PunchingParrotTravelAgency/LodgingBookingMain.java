@@ -21,8 +21,7 @@ public class LodgingBookingMain {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter employee name: ");
         name = input.nextLine();
-        employee.setName(name);
-        
+        employee.setName(name);        
     }
     
 }
