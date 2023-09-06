@@ -23,7 +23,7 @@ public class LodgingBookingMain {
         System.out.println("Enter 1 for employee or 2 for customer >> ");
         empOrCust = input.nextInt();
         input.nextLine();
-//        ***************add a while loop for invalid entry****************
+//        control structure for selection
         if(empOrCust == 1){        
 //        employee object reference
         TravelAgencyEmployee employee = new TravelAgencyEmployee();
@@ -38,10 +38,8 @@ public class LodgingBookingMain {
         employee.display();
         }else if(empOrCust == 2){
             Customer customer = new Customer();
-        }else{
-            System.out.println("Invalid entry");
-            
         }
+        
     }
     
 }
