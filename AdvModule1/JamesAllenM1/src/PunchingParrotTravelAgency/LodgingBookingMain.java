@@ -36,7 +36,7 @@ public class LodgingBookingMain {
             
             custRating.display();
 
-            
+// finish out the lodgings, change all display() to toString() and add formatting add the calls. remove the display calls. ensure all subclasses override superclass toString()           
     }
         
     
