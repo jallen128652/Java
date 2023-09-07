@@ -9,14 +9,14 @@ package PunchingParrotTravelAgency;
  * @author druid
  */
 public class LodgingReview{
-//    1-5
+//    private vars
     private int rating;
     private String comments;
-//    default constructor
+//    default constructor probably not necessary because this is a standalone class
     LodgingReview(){
         
     }
-
+//      setters and getters
     public void setRating(int rating) {
         this.rating = rating;
     }
@@ -31,7 +31,6 @@ public class LodgingReview{
 
     public String getComments() {
         return comments;
-    }
-    
+    }    
     
 }
