@@ -40,11 +40,8 @@ public class Person {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
-    void display(){
-        System.out.print(firstName + " " + lastName + " ");
-    }
-    
- 
-    
-    
+    @Override
+    public String toString(){
+        return firstName + " " + lastName;
+    }      
 }

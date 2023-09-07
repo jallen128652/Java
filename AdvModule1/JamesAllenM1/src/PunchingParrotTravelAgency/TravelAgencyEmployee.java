@@ -59,15 +59,13 @@ public class TravelAgencyEmployee extends Person{
     public void setSalary(double salary) {
         this.salary = salary;
     }
-    
-    void display(){
-        super.display();
-        System.out.println("");
-        System.out.println("employee information:");
-        System.out.println("Employee ID: " + empId);
-        System.out.println("Hire date: " + hireDate);
-        System.out.println("Weekly salary: $" + String.format("%.2f", salary));
-        System.out.println("Employee is a manager? " + isManager);
-        System.out.println("");
+    @Override
+    public String toString(){
+//        note call to super must be the first thing AFTER the return not before on a toString() fx
+        return super.toString() + " Employee information: " + 
+               "\nEmployee ID: " + empId +
+               "\nHire date: " + hireDate +
+               "\nWeekly salary: $" + String.format("%.2f", salary) + 
+               "\nEmployee is a manager? " + isManager + "\n";
     }    
 }

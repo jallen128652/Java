@@ -45,18 +45,13 @@ public class Customer extends Person {
     public void setPassword(String password) {
         this.password = password;
     }
-
-    void display(){
-//        calls the superclass display
-        super.display();
-        System.out.println("Welcome, login successful!\nAccount details:");
-        System.out.println("Username: " + loginName);
-        System.out.println("Address: " + address);
-        System.out.println("Phone number: " + phoneNumber);
-        System.out.println("");
-
-
-    }
-    
-    
+    @Override
+    public String toString(){
+//        calls the superclass toString() and adds subclass prints
+//        note call to super must be the first thing AFTER the return not before on a toString() fx
+        return super.toString() + " Welcome, login successful!\nAccount details:" + 
+               "\nUsername: " + loginName + 
+               "\nAddress: " + address +
+               "\nPhone number: " + phoneNumber + "\n";
+    }   
 }

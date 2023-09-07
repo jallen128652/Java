@@ -9,14 +9,29 @@ package PunchingParrotTravelAgency;
  * @author druid
  */
 public class HotelRoom{
-    static String checkIn = "1:00pm";
-    static String checkOut = "11:00am";
-    static String wifiPw = "PUnchParrots**1234"; 
-//must use static vars and method to call from main fx unless I use setters and getters with a new obj ref   
-    static void display(){
-        System.out.println("Your check in time is: " + checkIn);
-        System.out.println("Your check out time is: " + checkOut);
-        System.out.println("The wifi password is: " + wifiPw);
+    String checkIn;
+    String checkOut;
+    String wifiPw; 
+//    default constructor
+    HotelRoom(){
+//        default values
+        checkIn = "1:00pm";
+        checkOut = "11:00am";
+        wifiPw = "PUnchParrots**1234";
+    }
+//    overloaded constructor
+    HotelRoom(String checkIn, String checkOut, String wifiPw){
+//        reference vars to the current obj assigning it the class var vals
+        this.checkIn = checkIn;
+        this.checkOut = checkOut;
+        this.wifiPw = wifiPw;
+    }
+//  note no inheritance so no calls to super.toString()
+    @Override
+    public String toString(){
+        return "Your check in time is: " + checkIn +
+               "\nYour check out time is: " + checkOut + 
+               "\nThe wifi password is: " + wifiPw + "\n";
     }
 }
 
