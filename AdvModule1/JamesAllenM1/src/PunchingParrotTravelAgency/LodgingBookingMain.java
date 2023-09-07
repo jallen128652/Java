@@ -2,6 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
+//Header: 
+//  class: adv java
+//  section: INEW 2338 7p1
+//  Assignment: Module1 Mastery
 package PunchingParrotTravelAgency;
 
 /**
