@@ -12,7 +12,7 @@ public class HotelRoom{
     static String checkIn = "1:00pm";
     static String checkOut = "11:00am";
     static String wifiPw = "PUnchParrots**1234"; 
-    
+//must use static vars and method to call from main fx unless I use setters and getters with a new obj ref   
     static void display(){
         System.out.println("Your check in time is: " + checkIn);
         System.out.println("Your check out time is: " + checkOut);
