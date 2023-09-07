@@ -13,6 +13,26 @@ public class Customer extends Person {
     private String password;
     private String address;
     private String phoneNumber;
+    
+//   default constructor
+    Customer(){
+//        default vals
+        loginName = "Default";
+        password = "Default";
+        address = "Default";
+        phoneNumber = "Default";
+    }
+//    overloaded constructor
+    Customer(String firstName, String lastName, String loginName, String password,
+            String address, String phoneNumber){
+//        pulls vals from person
+        super(firstName, lastName);
+//        reference subclass var not inherited 
+        this.loginName = loginName;
+        this.password = password;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
+    }
 
     public String getLoginName() {
         return loginName;
@@ -22,28 +42,19 @@ public class Customer extends Person {
         this.loginName = loginName;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
     public void setPassword(String password) {
         this.password = password;
     }
 
-    public String getAddress() {
-        return address;
-    }
+    void display(){
+//        calls the superclass display
+        super.display();
+        System.out.println("Welcome, login successful!\n Account details:");
+        System.out.println("Username: " + loginName);
+        System.out.println("Address: " + address);
+        System.out.println("Phone number: " + phoneNumber);
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
     }
     
     

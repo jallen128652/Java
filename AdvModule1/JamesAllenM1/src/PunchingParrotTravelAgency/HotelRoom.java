@@ -9,7 +9,14 @@ package PunchingParrotTravelAgency;
  * @author druid
  */
 public class HotelRoom{
-    String checkIn;
-    String checkOut;
-    String wifiPw;    
+    static String checkIn = "1:00pm";
+    static String checkOut = "11:00am";
+    static String wifiPw = "PUnchParrots**1234"; 
+    
+    static void display(){
+        System.out.println("Your check in time is: " + checkIn);
+        System.out.println("Your check out time is: " + checkOut);
+        System.out.println("The wifi password is: " + wifiPw);
+    }
 }
+

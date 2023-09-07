@@ -8,8 +8,30 @@ package PunchingParrotTravelAgency;
  *
  * @author druid
  */
-public class LodgingReview extends Customer {
+public class LodgingReview{
 //    1-5
-    int rating;
-    String comments;
+    private int rating;
+    private String comments;
+//    default constructor
+    LodgingReview(){
+        
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
+    }
+
+    public void setComments(String comments) {
+        this.comments = comments;
+    }
+
+    public int getRating() {
+        return rating;
+    }
+
+    public String getComments() {
+        return comments;
+    }
+    
+    
 }
