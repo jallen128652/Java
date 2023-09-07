@@ -49,7 +49,7 @@ public class Customer extends Person {
     void display(){
 //        calls the superclass display
         super.display();
-        System.out.println("Welcome, login successful!\n Account details:");
+        System.out.println("Welcome, login successful!\nAccount details:");
         System.out.println("Username: " + loginName);
         System.out.println("Address: " + address);
         System.out.println("Phone number: " + phoneNumber);

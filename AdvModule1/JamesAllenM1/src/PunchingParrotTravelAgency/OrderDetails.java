@@ -8,7 +8,8 @@ package PunchingParrotTravelAgency;
  *
  * @author druid
  */
-public class OrderDetails extends Customer {
+//********************need to determine best inheritance for this class either customer or lodging*****************************
+public class OrderDetails extends Lodging {
     String roomNumber;
     double balanceOwed;
     double totalSpending;
