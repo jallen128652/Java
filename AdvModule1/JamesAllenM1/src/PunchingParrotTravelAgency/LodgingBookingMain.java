@@ -27,6 +27,7 @@ public class LodgingBookingMain {
 //        clear input stream
         input.nextLine();
 //        control structure for selection
+//****************break these out into local methods and the calls inside the control structure**************************
         if(empOrCust == 1){        
 //        employee object reference
             TravelAgencyEmployee employee = new TravelAgencyEmployee();
@@ -62,6 +63,7 @@ public class LodgingBookingMain {
             int rating;
             String comments;
             detailsOrReview = input.nextInt();
+//*********************break these out into local methods with the calls inside the control structure*************************
             if(detailsOrReview == 1){
                 HotelRoom.display();                
             }else{
