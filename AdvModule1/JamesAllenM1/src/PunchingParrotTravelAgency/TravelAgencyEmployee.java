@@ -62,10 +62,12 @@ public class TravelAgencyEmployee extends Person{
     
     void display(){
         super.display();
+        System.out.println("");
         System.out.println("employee information:");
         System.out.println("Employee ID: " + empId);
         System.out.println("Hire date: " + hireDate);
         System.out.println("Weekly salary: $" + String.format("%.2f", salary));
-        System.out.println("Employee is a manager? " + isManager);        
+        System.out.println("Employee is a manager? " + isManager);
+        System.out.println("");
     }    
 }

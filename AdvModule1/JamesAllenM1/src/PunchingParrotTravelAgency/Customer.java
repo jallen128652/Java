@@ -53,6 +53,7 @@ public class Customer extends Person {
         System.out.println("Username: " + loginName);
         System.out.println("Address: " + address);
         System.out.println("Phone number: " + phoneNumber);
+        System.out.println("");
 
 
     }

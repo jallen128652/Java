@@ -40,8 +40,13 @@ public class LodgingReview{
     public String getComments() {
         return comments;
     } 
+//    display 
     void display(){
-        
+        System.out.println("Rating submitted: ");
+        System.out.println("We value your feedback!");
+        System.out.println(rating + " stars");
+        System.out.println("Comments: " + comments);
+        System.out.println("");
     }
     
 }

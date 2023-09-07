@@ -22,8 +22,10 @@ public class LodgingBookingMain {
 
     //        call to display
             employee.display();
-            Customer customer = new Customer("jim", "allen", "ji45", "Pu##45",
-                    "99 Hold st. Temple, TX 76502", "255-555-5555");
+            
+//            obj reference to customer
+            Customer customer = new Customer("Jon", "Doe", "ji45", "Pu##45",
+                    "99 Hold st. Middle, TX 76533", "255-555-5555");
 
 //            call to display
             customer.display();      
