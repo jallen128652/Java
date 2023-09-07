@@ -37,7 +37,7 @@ public class Lodging{
     public String toString(){
         return "Booking details: " +
                "\nTravel date: " + date +
-               "\nLodging type:: " + lodgingType + 
+               "\nLodging type: " + lodgingType + 
                "\nHotel name: " + name + 
                "\nNightly room price: $" + String.format("%.2f", basePricePerNight) + "\n";
     }
