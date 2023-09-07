@@ -23,7 +23,7 @@ public class TravelAgencyEmployee extends Person{
         isManager = false;
     }
 //    overloaded constructor
-    TravelAgencyEmployee(String firstName, String lastName, int empId, String hireDate,double salary, boolean isManager){
+    TravelAgencyEmployee(String firstName, String lastName, int empId, String hireDate, double salary, boolean isManager){
 //        calls Person class for these vals
         super(firstName, lastName);
 //        reference subclass vars not inherited

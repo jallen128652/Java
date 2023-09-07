@@ -12,4 +12,5 @@ public class Lodging extends Customer{
     String date;
     int lodgingType;
     double basePricePerNight;
+    String name;
 }

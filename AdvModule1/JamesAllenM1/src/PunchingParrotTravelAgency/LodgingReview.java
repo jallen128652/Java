@@ -14,7 +14,15 @@ public class LodgingReview{
     private String comments;
 //    default constructor probably not necessary because this is a standalone class
     LodgingReview(){
-        
+//        default values
+        rating = 5;
+        comments = "Default";
+    }
+    
+//    overloaded constructor
+    LodgingReview(int rating, String comments){
+        this.rating = rating;
+        this.comments = comments;
     }
 //      setters and getters
     public void setRating(int rating) {
@@ -31,6 +39,9 @@ public class LodgingReview{
 
     public String getComments() {
         return comments;
-    }    
+    } 
+    void display(){
+        
+    }
     
 }
