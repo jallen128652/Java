@@ -18,15 +18,7 @@ public class LodgingBookingMain {
     public static void main(String[] args){
 
        
-//        object reference constructors
-            TravelAgencyEmployee employee = new TravelAgencyEmployee("Jane", "Doe", 123,
-                    "20230907", 1500, false);
-            Customer customer = new Customer("Jon", "Doe", "ji45", "Pu##45",
-                    "99 Hold st. Middle, TX 76533", "255-555-5555");
-            LodgingReview custRating = new LodgingReview(1, "The room smelled like cigarrettes and mold, breakfast was good though.");
-            HotelRoom roomDetails = new HotelRoom("12:30pm", "9:00am", "HOtel##76587");
-            OrderDetails order1 = new OrderDetails("Jim", "Jones", "318b", 183, 163, 20);
-            
+//        object reference constructors            
 //            the lodging 5
 //              HouseOrHome class vars: String date, String lodgingType, String name, double basePricePerNight, int numberBedrooms,
 //            boolean jacuziOrPool, boolean laundryOnSite
@@ -44,19 +36,11 @@ public class LodgingBookingMain {
                     true, 20, 25, true, true, true);
             
 //        call to display the toString() fx's
-            System.out.println(employee.toString());
-
 //            the lodging 5
             System.out.println(traveler1.toString());
             System.out.println(traveler2.toString());
             System.out.println(traveler3.toString());
             System.out.println(traveler4.toString());
-            System.out.println(traveler5.toString());
-            
-//            after lodging scenario
-            System.out.println(customer.toString());
-            System.out.println(roomDetails.toString());
-            System.out.println(order1.toString());
-            System.out.println(custRating.toString());      
+            System.out.println(traveler5.toString());     
     }
 }
