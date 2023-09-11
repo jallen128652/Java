@@ -8,29 +8,23 @@ package PunchingParrotTravelAgency;
  *
  * @author druid
  */
-// OrderDetails is a Person in the sense that a Person is an account used in this context
-public class OrderDetails extends Person{
-    String roomNumber;
-    double balanceOwed;
+public class OrderDetails extends Customer{
     double totalSpending;
     double parkingFee;    
 
 //  default constructo
     OrderDetails(){
 //    default values
-        roomNumber = "101a";
-        balanceOwed = 150;
+
         totalSpending = 155;
         parkingFee = 5;
     }
 //    overloaded constructor
     OrderDetails(String firstName, String lastName, String roomNumber, double balanceOwed,
             double totalSpending, double parkingFee){
-//        calls to super 
-        super(firstName, lastName);
+//        calls to super and assign values
+        super("Jon", "Jones", "JJ123", "JJones&&123", "18 Old oak trl. Waco TX. 76555", "254-555-5555", "305b", 150);
 //        reference vars to the current obj assigning it the class var vals
-        this.roomNumber = roomNumber;
-        this.balanceOwed = balanceOwed;
         this.totalSpending = totalSpending;
         this.parkingFee = parkingFee;
     }
@@ -39,9 +33,7 @@ public class OrderDetails extends Person{
     public String toString(){
 //        note call to super must be the first thing AFTER the return not before on a toString() fx
         return super.toString() + " order information: " + 
-               "\nRoom number: " + roomNumber +
                "\nRoom charges: $" + String.format("%.2f", totalSpending) +
-               "\nParking fee: $" + String.format("%.2f", parkingFee) + 
-               "\nTotal owed: $" + String.format("%.2f", balanceOwed) + "\n";
+               "\nParking fee: $" + String.format("%.2f", parkingFee) + "\n";
     }        
 }

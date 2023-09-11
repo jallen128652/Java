@@ -9,49 +9,41 @@ package PunchingParrotTravelAgency;
  * @author druid
  */
 public class Customer extends Person {
-    private String loginName;
-    private String password;
+
     private String address;
     private String phoneNumber;
+    String roomNumber;
+    double balanceOwed;
     
 //   default constructor
     Customer(){
 //        default vals
-        loginName = "Default";
-        password = "Default";
         address = "Default";
         phoneNumber = "Default";
+        roomNumber = "101a";
+        balanceOwed = 150;
     }
 //    overloaded constructor
     Customer(String firstName, String lastName, String loginName, String password,
-            String address, String phoneNumber){
+            String address, String phoneNumber, String roomNumber, double balanceOwed){
 //        pulls vals from person
-        super(firstName, lastName);
+        super(firstName, lastName, loginName, password);
 //        reference subclass var not inherited 
-        this.loginName = loginName;
-        this.password = password;
+
         this.address = address;
         this.phoneNumber = phoneNumber;
+        this.roomNumber = roomNumber;
+        this.balanceOwed = balanceOwed;
     }
 
-    public String getLoginName() {
-        return loginName;
-    }
-
-    public void setLoginName(String loginName) {
-        this.loginName = loginName;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
     @Override
     public String toString(){
 //        calls the superclass toString() and adds subclass prints
 //        note call to super must be the first thing AFTER the return not before on a toString() fx
         return super.toString() + " Welcome, login successful!\nAccount details:" + 
-               "\nUsername: " + loginName + 
                "\nAddress: " + address +
-               "\nPhone number: " + phoneNumber + "\n";
+               "\nPhone number: " + phoneNumber +
+               "\nRoom number: " + roomNumber + 
+               "\nBalance owed: $" + String.format("%.2f", balanceOwed) + "\n";
     }   
 }

@@ -15,9 +15,7 @@ package PunchingParrotTravelAgency;
 
 public class LodgingBookingMain {
 //    main
-    public static void main(String[] args){
-
-       
+    public static void main(String[] args){       
 //        object reference constructors            
 //            the lodging 5
 //              HouseOrHome class vars: String date, String lodgingType, String name, double basePricePerNight, int numberBedrooms,
@@ -41,6 +39,6 @@ public class LodgingBookingMain {
             System.out.println(traveler2.toString());
             System.out.println(traveler3.toString());
             System.out.println(traveler4.toString());
-            System.out.println(traveler5.toString());     
+            System.out.println(traveler5.toString());  
     }
 }
